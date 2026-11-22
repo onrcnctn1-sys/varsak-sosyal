@@ -89,7 +89,7 @@ public class KontrolWorker extends Worker {
                 .setContentTitle(baslik)
                 .setContentText(metin)
                 .setStyle(new Notification.BigTextStyle().bigText(metin))
-                .setColor(0xFF0F766E)
+                .setColor(0xFF00818C)
                 .setAutoCancel(true)
                 .setContentIntent(pi);
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);

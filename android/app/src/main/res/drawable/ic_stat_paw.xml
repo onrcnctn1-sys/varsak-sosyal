@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Bildirim simgesi: Varsak logosundaki V işareti (tek renk) -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp" android:height="24dp"
-    android:viewportWidth="48" android:viewportHeight="48">
-    <path android:fillColor="#FFFFFFFF" android:pathData="M24,22a8,8 0 1,0 0.01,0z"/>
-    <path android:fillColor="#FFFFFFFF" android:pathData="M13.5,16a4,4 0 1,0 0.01,0z"/>
-    <path android:fillColor="#FFFFFFFF" android:pathData="M34.5,16a4,4 0 1,0 0.01,0z"/>
-    <path android:fillColor="#FFFFFFFF" android:pathData="M19,8a3.5,3.5 0 1,0 0.01,0z"/>
-    <path android:fillColor="#FFFFFFFF" android:pathData="M29,8a3.5,3.5 0 1,0 0.01,0z"/>
+    android:viewportWidth="1254" android:viewportHeight="1254">
+    <path android:fillColor="#FFFFFFFF" android:pathData="M250,340L410,340L485,458L565,340L715,340L480,698Z"/>
+    <path android:fillColor="#FFFFFFFF" android:pathData="M497,705L576,580L640,668L848,340L1000,340L640,928Z"/>
 </vector>

@@ -8,8 +8,8 @@
 <title>Varsak Sosyal</title>
 <script>try{var a=JSON.parse(localStorage.getItem("vs_ayar")||"{}"),m=a.mod||"auto",d=m==="dark"||(m==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.setAttribute("data-theme",d?"dark":"light")}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/varsak-192.png">
+<link rel="apple-touch-icon" href="icons/varsak-apple-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -332,7 +332,7 @@ body.modal-open { overflow: hidden; }
 <body>
 <div class="wrap">
   <header class="topbar">
-    <img id="appLogo" src="icons/icon-192.png" alt="">
+    <img id="appLogo" src="icons/varsak-192.png" alt="">
     <div class="brand"><span id="appName">Varsak Sosyal</span><small><span id="guncel">Güncelleniyor…</span> · <span id="appSub">Varsak Veteriner Polikliniği</span></small></div>
     <button class="icon-btn" id="btnNews" aria-label="Yenilikler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span class="dot" id="dotNews" hidden></span></button>
     <button class="icon-btn" id="btnSettings" aria-label="Ayarlar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
@@ -532,7 +532,7 @@ body.modal-open { overflow: hidden; }
   <div class="field"><label for="setName">Uygulama adı</label><input type="text" id="setName" maxlength="30"></div>
   <div class="field"><label for="setSub">Alt başlık</label><input type="text" id="setSub" maxlength="40"></div>
   <div class="field"><label>Logo</label>
-    <div class="logo-row"><img id="setLogoPrev" src="icons/icon-192.png" alt=""><span class="file-btn">Resim seç<input type="file" id="setLogo" accept="image/*"></span><button class="ghost" id="setLogoReset">Varsayılan</button></div>
+    <div class="logo-row"><img id="setLogoPrev" src="icons/varsak-192.png" alt=""><span class="file-btn">Resim seç<input type="file" id="setLogo" accept="image/*"></span><button class="ghost" id="setLogoReset">Varsayılan</button></div>
   </div>
   <div class="field"><label>Renk</label><div class="swatches" id="swatches"></div></div>
   <div class="field"><label>Görünüm</label><div class="seg" id="modeSeg"><button data-m="auto">Otomatik</button><button data-m="light">☀️ Açık</button><button data-m="dark">🌙 Koyu</button></div></div>
@@ -616,7 +616,7 @@ body.modal-open { overflow: hidden; }
   function sorted(arr, key) { return (arr || []).slice().sort(function (a, b) { return (b[key] || 0) - (a[key] || 0); }); }
   var ICONS = { video: '<path d="M4 6h11v12H4zM15 10l5-3v10l-5-3"/>', up: '<path d="M4 17l6-6 4 4 6-6M14 9h6v6"/>', time: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>', spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>' };
   function ic(name) { var d = el("span", "ic"); d.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[name] + "</svg>"; return d; }
-  function logoSrc() { return (store.get("ayar", {}).logo) || "icons/icon-192.png"; }
+  function logoSrc() { return (store.get("ayar", {}).logo) || "icons/varsak-192.png"; }
 
   // ---------- ANA SAYFA ----------
   function drawAna() {
@@ -859,7 +859,7 @@ body.modal-open { overflow: hidden; }
   function applySettings() {
     var s = Object.assign({}, DEF, store.get("ayar", {}));
     $("appName").textContent = s.ad || DEF.ad; $("appSub").textContent = s.alt || DEF.alt; document.title = s.ad || DEF.ad;
-    $("appLogo").src = s.logo || "icons/icon-192.png";
+    $("appLogo").src = s.logo || "icons/varsak-192.png";
     var t = THEMES[s.tema] || THEMES[0], r = document.documentElement.style;
     if (s.tema) { r.setProperty("--accent", t.a); r.setProperty("--accent-2", t.a2); } else { r.removeProperty("--accent"); r.removeProperty("--accent-2"); }
     r.setProperty("--hero1", t.h1); r.setProperty("--hero2", t.h2); r.setProperty("--glow", t.g);
@@ -869,7 +869,7 @@ body.modal-open { overflow: hidden; }
   var draft = null;
   function openSettings() {
     draft = Object.assign({}, DEF, store.get("ayar", {}));
-    $("setName").value = draft.ad; $("setSub").value = draft.alt; $("setLogoPrev").src = draft.logo || "icons/icon-192.png";
+    $("setName").value = draft.ad; $("setSub").value = draft.alt; $("setLogoPrev").src = draft.logo || "icons/varsak-192.png";
     var sw = $("swatches"); sw.replaceChildren();
     THEMES.forEach(function (t, i) { var b = el("button", "sw" + (i === draft.tema ? " on" : "")); b.style.background = "linear-gradient(135deg," + t.h1 + "," + t.a2 + ")"; b.title = t.ad; b.setAttribute("aria-label", t.ad); b.onclick = function () { draft.tema = i; sw.querySelectorAll(".sw").forEach(function (x) { x.classList.toggle("on", x === b); }); }; sw.appendChild(b); });
     document.querySelectorAll("#modeSeg button").forEach(function (b) { b.classList.toggle("on", b.dataset.m === draft.mod); b.onclick = function () { draft.mod = b.dataset.m; document.querySelectorAll("#modeSeg button").forEach(function (x) { x.classList.toggle("on", x === b); }); }; });
@@ -885,7 +885,7 @@ body.modal-open { overflow: hidden; }
       }; im.src = rd.result;
     }; rd.readAsDataURL(f);
   });
-  $("setLogoReset").onclick = function () { draft.logo = null; $("setLogoPrev").src = "icons/icon-192.png"; };
+  $("setLogoReset").onclick = function () { draft.logo = null; $("setLogoPrev").src = "icons/varsak-192.png"; };
   $("setSave").onclick = function () { draft.ad = $("setName").value.trim() || DEF.ad; draft.alt = $("setSub").value.trim() || DEF.alt; store.set("ayar", draft); applySettings(); drawAll(); closeSheet("dlgSettings"); };
   $("setReset").onclick = function () { store.set("ayar", {}); applySettings(); drawAll(); closeSheet("dlgSettings"); };
   $("btnSettings").onclick = openSettings;
