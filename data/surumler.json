@@ -1,5 +1,13 @@
 [
  {
+  "surum": "1.2.1",
+  "tarih": "2026-11-22",
+  "baslik": "Otomatik güncelleme",
+  "maddeler": [
+   "Telefonda eski sürüm kalırsa uygulama kendini otomatik yeniliyor"
+  ]
+ },
+ {
   "surum": "1.2",
   "tarih": "2026-11-22",
   "baslik": "Yeni logo, bildirimler ve koyu tema",
