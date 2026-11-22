@@ -292,9 +292,12 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
 .empty img { width: 110px; margin: 0 auto 8px; }
 
 /* Diyaloglar */
-dialog { border: 0; padding: 0; border-radius: 26px; width: min(560px, calc(100% - 24px)); max-height: calc(100% - 48px); background: var(--panel); color: var(--fg); box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
+dialog { border: 0; padding: 0; border-radius: 26px; width: min(560px, calc(100% - 24px)); max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); overflow: hidden; background: var(--panel); color: var(--fg); box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
+dialog[open] { display: flex; flex-direction: column; }
 dialog::backdrop { background: rgba(10,18,17,.55); backdrop-filter: blur(3px); }
-.dlg { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.dlg { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); }
+.dlg-h { position: sticky; top: 0; z-index: 2; background: var(--panel); padding-top: 20px; padding-bottom: 6px; }
+body.modal-open { overflow: hidden; }
 .dlg-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .dlg-h h2 { font-size: 20px; }
 .close { border: 0; background: var(--bg); width: 36px; height: 36px; border-radius: 12px; font-size: 20px; cursor: pointer; color: var(--fg); }
@@ -891,7 +894,8 @@ dialog::backdrop { background: rgba(10,18,17,.55); backdrop-filter: blur(3px); }
   }
   function openNews() { $("dlgNews").showModal(); var l = latestVer(); if (l) { store.set("ver", l.surum); $("dotNews").hidden = true; $("updCard").hidden = true; } }
   $("btnNews").onclick = openNews; $("updOpen").onclick = openNews;
-  document.querySelectorAll("dialog").forEach(function (d) { d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-close]")) d.close(); }); });
+  document.querySelectorAll("dialog").forEach(function (d) { d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-close]")) d.close(); }); d.addEventListener("close", function () { document.body.classList.remove("modal-open"); }); });
+  var _show = HTMLDialogElement.prototype.showModal; HTMLDialogElement.prototype.showModal = function () { document.body.classList.add("modal-open"); return _show.apply(this, arguments); };
 
   // ---------- Gezinme ----------
   var SCREENS = ["ana", "varsak", "fikirler", "kesfet", "notlar"];

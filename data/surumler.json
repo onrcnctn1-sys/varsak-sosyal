@@ -1,5 +1,13 @@
 [
  {
+  "surum": "1.1.1",
+  "tarih": "2026-11-22",
+  "baslik": "Düzeltme",
+  "maddeler": [
+   "Yenilikler ve Ayarlar pencereleri artık telefonda aşağı kaydırılabiliyor"
+  ]
+ },
+ {
   "surum": "1.1",
   "tarih": "2026-11-22",
   "baslik": "Varsak paneli, Uyarlama ve Notlar",
