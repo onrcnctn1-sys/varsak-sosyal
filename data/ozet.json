@@ -1,0 +1,30 @@
+[
+ {
+  "anahtar": "analiz_video",
+  "etiket": "Analiz edilen evcil hayvan videosu",
+  "deger": 7785,
+  "birim": "video",
+  "not": "6 Eki - 16 Kas 2026, TikTok + Instagram"
+ },
+ {
+  "anahtar": "patlama",
+  "etiket": "Hesabın normalinin 2 katını aşan videolar",
+  "deger": 31.7,
+  "birim": "%",
+  "not": "Tüm nişlerde bu oran %24,4"
+ },
+ {
+  "anahtar": "sure",
+  "etiket": "Patlayan videoların medyan süresi",
+  "deger": 28,
+  "birim": "sn",
+  "not": "Tüm evcil hayvan videolarında 21 sn"
+ },
+ {
+  "anahtar": "ilk_kare",
+  "etiket": "Hareketli ilk karenin patlama oranı",
+  "deger": 44,
+  "birim": "%",
+  "not": "En iyi açılış türü"
+ }
+]

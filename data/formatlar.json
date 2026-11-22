@@ -1,0 +1,72 @@
+[
+ {
+  "format": "Sessiz estetik",
+  "video": 828,
+  "patlama_orani": 38.2,
+  "hesap": 20,
+  "medyan_kat": 5.4
+ },
+ {
+  "format": "Ürün tanıtımı",
+  "video": 2136,
+  "patlama_orani": 36.5,
+  "hesap": 53,
+  "medyan_kat": 4.6
+ },
+ {
+  "format": "Liste (Top 5)",
+  "video": 447,
+  "patlama_orani": 34.5,
+  "hesap": 15,
+  "medyan_kat": 4.9
+ },
+ {
+  "format": "Derleme",
+  "video": 192,
+  "patlama_orani": 33.3,
+  "hesap": 6,
+  "medyan_kat": 7.4
+ },
+ {
+  "format": "Eğitici (nasıl yapılır)",
+  "video": 704,
+  "patlama_orani": 30.7,
+  "hesap": 25,
+  "medyan_kat": 7.3
+ },
+ {
+  "format": "Öncesi / sonrası",
+  "video": 389,
+  "patlama_orani": 26.9,
+  "hesap": 11,
+  "medyan_kat": 4.4
+ },
+ {
+  "format": "Hikâye anlatımı",
+  "video": 409,
+  "patlama_orani": 25.0,
+  "hesap": 10,
+  "medyan_kat": 6.1
+ },
+ {
+  "format": "İnceleme",
+  "video": 520,
+  "patlama_orani": 20.3,
+  "hesap": 12,
+  "medyan_kat": 3.8
+ },
+ {
+  "format": "Açıklayıcı",
+  "video": 363,
+  "patlama_orani": 20.0,
+  "hesap": 8,
+  "medyan_kat": 6.7
+ },
+ {
+  "format": "Bir günüm",
+  "video": 202,
+  "patlama_orani": 17.1,
+  "hesap": 5,
+  "medyan_kat": 6.5
+ }
+]
