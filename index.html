@@ -186,17 +186,163 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
 .foot { font-size: 12px; color: var(--muted); line-height: 1.5; text-align: center; padding: 4px 8px; }
 :focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
 .err { color: #fecaca; font-weight: 600; }
+
+/* ---- v1.1 ekleri ---- */
+.topbar .brand { min-width: 0; }
+.brand small span { color: var(--accent); font-weight: 700; }
+.icon-btn { position: relative; flex: none; width: 42px; height: 42px; border-radius: 14px; border: 0; background: var(--panel); box-shadow: var(--shadow); display: grid; place-items: center; cursor: pointer; color: var(--fg); }
+.icon-btn svg { width: 21px; height: 21px; }
+.topbar .icon-btn:first-of-type { margin-left: auto; }
+.dot { position: absolute; top: 7px; right: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--coral); border: 2px solid var(--panel); }
+.dot[hidden] { display: none; }
+.tab { position: relative; }
+.tab .dot { top: 4px; right: calc(50% - 18px); border-color: var(--panel); }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; padding: 4px; border-radius: 16px; background: var(--panel); box-shadow: var(--shadow); }
+.seg button { border: 0; background: transparent; padding: 10px 6px; border-radius: 12px; font-weight: 700; font-size: 13.5px; color: var(--muted); cursor: pointer; position: relative; }
+.seg button.on { background: var(--fg); color: var(--bg); }
+.seg .dot { top: 6px; right: 8px; border-color: var(--panel); }
+.view[hidden] { display: none; }
+.view { display: flex; flex-direction: column; gap: 22px; }
+.new { display: inline-block; vertical-align: middle; font-family: var(--body); font-size: 10px; font-weight: 800; letter-spacing: .06em; padding: 3px 7px; border-radius: 6px; background: var(--coral); color: #fff; margin-left: 6px; }
+@media (prefers-reduced-motion: no-preference) { .new { animation: pop .5s ease both; } @keyframes pop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } } }
+
+/* Güncelleme kartı */
+.upd { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 14px 16px; background: linear-gradient(135deg, var(--fg), #1f3a36); color: #fff; border-radius: var(--r); }
+.upd b { font-family: var(--display); font-size: 16px; display: block; }
+.upd small { opacity: .8; font-size: 12.5px; }
+.upd .badge { font-size: 11px; font-weight: 800; padding: 5px 9px; border-radius: 8px; background: var(--coral); }
+.upd button { border: 0; background: #fff; color: #10201d; font-weight: 700; border-radius: 12px; padding: 9px 12px; cursor: pointer; }
+
+/* Varsak paneli */
+.profile { padding: 18px; display: flex; flex-direction: column; gap: 16px; }
+.p-head { display: flex; gap: 14px; align-items: center; }
+.p-head img { width: 64px; height: 64px; border-radius: 50%; padding: 3px; background: conic-gradient(from 200deg, var(--amber), var(--coral), var(--ig), var(--accent-2), var(--amber)); }
+.p-head b { font-family: var(--display); font-size: 18px; display: block; }
+.p-head small { color: var(--muted); font-size: 13px; }
+.p-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+.p-nums div { background: var(--bg); border-radius: 14px; padding: 10px 6px; }
+.p-nums b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; font-variant-numeric: tabular-nums; }
+.p-nums span { font-size: 12px; color: var(--muted); }
+.p-bio { margin: 0; font-size: 13.5px; line-height: 1.5; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn.alt { background: var(--soft); color: var(--accent); }
+.reels { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.reel-chart { display: flex; align-items: flex-end; gap: 6px; height: 170px; padding-top: 18px; }
+.reel-chart a { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%; text-decoration: none; color: inherit; min-width: 0; }
+.reel-chart i { display: block; width: 100%; border-radius: 8px 8px 4px 4px; background: linear-gradient(180deg, var(--coral), var(--amber)); min-height: 4px; }
+.reel-chart a.top i { background: linear-gradient(180deg, var(--accent-2), var(--accent)); }
+.reel-chart span { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.reel-chart em { font-style: normal; font-size: 10px; color: var(--muted); }
+.insight { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; padding: 14px; border-radius: var(--r); background: var(--soft); }
+.insight img { width: 56px; height: 56px; }
+.insight p { margin: 0; font-size: 13.5px; line-height: 1.5; }
+.rating { padding: 16px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
+.rating .big { font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1; }
+.stars { color: var(--amber); font-size: 18px; letter-spacing: 2px; }
+.rating small { color: var(--muted); font-size: 12.5px; display: block; margin-top: 2px; }
+.rating .btn { grid-column: 1 / -1; }
+.cmp { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.cmp-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; }
+.cmp-row .nm { font-size: 13.5px; font-weight: 700; }
+.cmp-row .nm small { display: block; font-weight: 500; color: var(--muted); font-size: 11.5px; }
+.cmp-row .v { font-family: var(--display); font-weight: 800; font-variant-numeric: tabular-nums; }
+.cmp-row .track { grid-column: 1 / -1; height: 10px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.cmp-row .track i { display: block; height: 100%; border-radius: 99px; background: var(--muted); opacity: .55; }
+.cmp-row.me .track i { background: linear-gradient(90deg, var(--accent), var(--accent-2)); opacity: 1; }
+.cmp-row.me .nm { color: var(--accent); }
+.cmp-row a { font-size: 12px; font-weight: 700; color: var(--accent); text-decoration: none; }
+
+/* Uyarlama */
+.adapt { overflow: hidden; display: flex; flex-direction: column; }
+.adapt .head { position: relative; height: 130px; display: grid; place-items: center; }
+.adapt .head img { height: 120px; }
+.adapt .kind { position: absolute; top: 12px; left: 12px; font-size: 11px; font-weight: 800; padding: 5px 10px; border-radius: 99px; background: rgba(255,255,255,.92); color: #10201d; }
+.adapt .body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.adapt .from { font-size: 12.5px; color: var(--muted); margin: 0; }
+.adapt .from b { color: var(--fg); }
+.adapt ol { margin: 0; padding-left: 20px; font-size: 13.5px; line-height: 1.55; }
+.adapt details summary { cursor: pointer; font-weight: 700; font-size: 13.5px; color: var(--accent); }
+.adapt .warn { font-size: 12.5px; padding: 8px 10px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@media (prefers-color-scheme: dark) { .adapt .warn { background: #45310b; color: #fde68a; } }
+
+/* Arşiv */
+.arch-day { display: flex; flex-direction: column; gap: 8px; }
+.arch-day h3 { font-size: 15px; color: var(--muted); }
+.arch-item { padding: 12px 14px; display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; }
+.arch-item img { width: 48px; height: 48px; }
+.arch-item b { font-size: 14.5px; }
+.arch-item small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+/* Notlar */
+.composer { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.composer textarea { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--line); border-radius: 14px; padding: 12px; font: inherit; font-size: 15px; background: var(--bg); color: var(--fg); }
+.composer .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.composer .btn { margin-top: 0; margin-left: auto; padding: 10px 18px; }
+.ntag { border: 0; padding: 7px 12px; border-radius: 99px; background: var(--bg); font-size: 12.5px; font-weight: 700; cursor: pointer; color: var(--muted); }
+.ntag.on { background: var(--accent); color: #fff; }
+.note-list { display: flex; flex-direction: column; gap: 10px; }
+.nitem { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.nitem p { margin: 0; white-space: pre-wrap; line-height: 1.5; font-size: 14.5px; }
+.nitem .meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+.nitem .meta .tag { font-size: 11px; }
+.nitem .acts { margin-left: auto; display: flex; gap: 4px; }
+.nitem .acts button { border: 0; background: var(--bg); border-radius: 10px; padding: 6px 10px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--fg); }
+.nitem.pin { box-shadow: 0 0 0 2px var(--amber), var(--shadow); }
+.empty { text-align: center; padding: 26px 16px; color: var(--muted); }
+.empty img { width: 110px; margin: 0 auto 8px; }
+
+/* Diyaloglar */
+dialog { border: 0; padding: 0; border-radius: 26px; width: min(560px, calc(100% - 24px)); max-height: calc(100% - 48px); background: var(--panel); color: var(--fg); box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
+dialog::backdrop { background: rgba(10,18,17,.55); backdrop-filter: blur(3px); }
+.dlg { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.dlg-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dlg-h h2 { font-size: 20px; }
+.close { border: 0; background: var(--bg); width: 36px; height: 36px; border-radius: 12px; font-size: 20px; cursor: pointer; color: var(--fg); }
+.ver { border-left: 3px solid var(--accent-2); padding-left: 12px; }
+.ver b { font-family: var(--display); font-size: 16px; }
+.ver small { color: var(--muted); margin-left: 6px; }
+.ver ul { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; line-height: 1.6; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; font-weight: 700; }
+.field input[type=text] { border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; font: inherit; background: var(--bg); color: var(--fg); }
+.logo-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.logo-row img { width: 56px; height: 56px; border-radius: 16px; object-fit: cover; }
+.file-btn { position: relative; overflow: hidden; display: inline-block; padding: 10px 14px; border-radius: 12px; background: var(--soft); color: var(--accent); font-weight: 700; font-size: 13.5px; cursor: pointer; }
+.file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+.sw { width: 40px; height: 40px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; }
+.sw.on { border-color: var(--fg); }
+.hint { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 0; }
+.ghost { border: 0; background: var(--bg); color: var(--fg); font-weight: 700; border-radius: 12px; padding: 10px 14px; cursor: pointer; }
+.sign { text-align: center; font-size: 12.5px; color: var(--muted); padding-bottom: 6px; }
+.sign b { color: var(--fg); font-weight: 700; }
+:root { --hero1: #0f766e; --hero2: #0e7490; --glow: #2dd4bf; }
+.hero { background: radial-gradient(120% 90% at 100% 0%, var(--glow) 0%, transparent 60%), linear-gradient(135deg, var(--hero1) 0%, var(--hero2) 100%); }
+.varsak-mini { padding: 14px 16px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; cursor: pointer; border: 0; text-align: left; width: 100%; font: inherit; color: inherit; }
+.varsak-mini img { width: 48px; height: 48px; border-radius: 50%; }
+.varsak-mini b { font-family: var(--display); font-size: 16px; display: block; }
+.varsak-mini small { color: var(--muted); font-size: 12.5px; }
+.varsak-mini .v { text-align: right; font-family: var(--display); font-weight: 800; font-size: 20px; }
+.varsak-mini .v small { display: block; font-family: var(--body); font-weight: 600; font-size: 11px; }
+
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
-    <img src="icons/icon-192.png" alt="">
-    <div class="brand">Varsak Sosyal<small>Varsak Veteriner Polikliniği</small></div>
-    <span class="pill-live"><i></i><span id="guncel">Güncelleniyor…</span></span>
+    <img id="appLogo" src="icons/icon-192.png" alt="">
+    <div class="brand"><span id="appName">Varsak Sosyal</span><small><span id="guncel">Güncelleniyor…</span> · <span id="appSub">Varsak Veteriner Polikliniği</span></small></div>
+    <button class="icon-btn" id="btnNews" aria-label="Yenilikler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span class="dot" id="dotNews" hidden></span></button>
+    <button class="icon-btn" id="btnSettings" aria-label="Ayarlar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   </header>
 
+  <!-- ANA SAYFA -->
   <section class="screen" id="ekran-ana">
+    <div class="upd" id="updCard" hidden>
+      <span class="badge">YENİ</span>
+      <div><b id="updTitle">Güncelleme</b><small id="updSub"></small></div>
+      <button id="updOpen">Gör</button>
+    </div>
     <div class="hero">
       <div class="txt">
         <p class="hi">Merhaba Varsak ekibi</p>
@@ -205,143 +351,291 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
       </div>
       <img class="art" src="assets/hero.svg" alt="Telefonda oynayan bir video ve yanında bir kedi ile köpek çizimi">
     </div>
-
+    <button class="card varsak-mini" data-goto="varsak" id="varsakMini"></button>
     <div class="stats" id="stats" aria-label="Özet rakamlar"></div>
-
     <div class="sec">
-      <div class="sec-h"><h2>Bugün çekilecek video</h2><button class="link-btn" data-goto="fikirler">Tüm fikirler</button></div>
+      <div class="sec-h"><h2>Bugün çekilecek video</h2><button class="link-btn" data-goto="fikirler" data-sub="bugun">Tüm fikirler</button></div>
       <div class="card today" id="today"></div>
     </div>
-
     <div class="sec">
-      <div class="sec-h"><h2>Türkiye'den hesaplar</h2><button class="link-btn" data-goto="hesaplar" data-filter="Türkiye">Hepsi</button></div>
+      <div class="sec-h"><h2>Türkiye'den hesaplar</h2><button class="link-btn" data-goto="kesfet" data-sub="hesaplar" data-filter="Türkiye">Hepsi</button></div>
       <div class="stories" id="stories"></div>
     </div>
-
     <div class="sec">
-      <div class="sec-h"><h2>En sıcak konular</h2><button class="link-btn" data-goto="gundem">Gündem</button></div>
+      <div class="sec-h"><h2>En sıcak konular</h2><button class="link-btn" data-goto="kesfet" data-sub="gundem">Gündem</button></div>
       <div class="topics" id="topTopics"></div>
     </div>
   </section>
 
-  <section class="screen" id="ekran-hesaplar" hidden>
-    <div class="sec">
-      <h2>Veteriner hesapları</h2>
-      <p class="sub">Dünyadan ve Türkiye'den, büyük ve küçük hesaplar. "Profile git"e dokununca hesap kendi uygulamasında açılır.</p>
-      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="ara" type="search" placeholder="Hesap ara (ör. kedi, İzmir, TikTok)" aria-label="Hesap ara"></label>
-      <div class="chips" id="filtre">
-        <button class="chip on" data-f="">Tümü</button>
-        <button class="chip" data-f="Türkiye">🇹🇷 Türkiye</button>
-        <button class="chip" data-f="kucuk">10 binin altı</button>
-        <button class="chip" data-f="TikTok">TikTok</button>
-        <button class="chip" data-f="Instagram">Instagram</button>
-        <button class="chip" data-f="YouTube">YouTube</button>
+  <!-- VARSAK -->
+  <section class="screen" id="ekran-varsak" hidden>
+    <div class="seg" data-seg="varsak">
+      <button class="on" data-v="hesabim">Hesabım</button>
+      <button data-v="antalya">Antalya<span class="dot" hidden></span></button>
+    </div>
+    <div class="view" data-view="varsak:hesabim">
+      <div class="card profile" id="profile"></div>
+      <div class="sec">
+        <h2>Son Reels izlenmeleri</h2>
+        <p class="sub">Sağdan sola: en yeniden en eskiye. Çubuğa dokununca video Instagram'da açılır.</p>
+        <div class="card reels"><div class="reel-chart" id="reelChart"></div></div>
+        <div class="insight" id="reelInsight"></div>
       </div>
-      <div class="note"><img src="assets/telefon.svg" alt=""><div><b>Takipçi sayısı izlenmeyi belirlemez</b><p id="kucukOrnek">TikTok ve Reels videoları takipçiye değil, izlenme süresine ve etkileşime göre dağıtır.</p></div></div>
-      <div class="acc-list" id="hesapList"></div>
+      <div class="sec">
+        <h2>Google puanı</h2>
+        <div class="card rating" id="googleCard"></div>
+      </div>
+    </div>
+    <div class="view" data-view="varsak:antalya" hidden>
+      <div class="sec">
+        <h2>Antalya'daki veteriner hesapları</h2>
+        <p class="sub">Instagram takipçi sayıları. Varsak yeşil çubukla gösteriliyor.</p>
+        <div class="insight" id="antInsight"></div>
+        <div class="card cmp" id="antFollow"></div>
+      </div>
+      <div class="sec">
+        <h2>Gönderi başına takipçi</h2>
+        <p class="sub">Her paylaşımın ortalama kaç takipçi getirdiğini gösterir. Yüksek olması, içeriklerin etkili olduğu anlamına gelir.</p>
+        <div class="card cmp" id="antRatio"></div>
+      </div>
     </div>
   </section>
 
-  <section class="screen" id="ekran-trendler" hidden>
-    <div class="sec">
-      <h2>En çok patlayan formatlar</h2>
-      <p class="sub">Hesabın normal izlenmesinin en az 2 katına çıkan videoların oranı.</p>
-      <div class="podium" id="podium"></div>
-      <div class="card bars" id="formatBars"></div>
-    </div>
-    <div class="sec">
-      <h2>İlk 3 saniye</h2>
-      <p class="sub">Videonun ilk cümlesi (kanca) ve ilk karesine göre patlama oranı.</p>
-      <div class="card bars" id="kancaBars"></div>
-    </div>
-  </section>
-
-  <section class="screen" id="ekran-gundem" hidden>
-    <div class="sec">
-      <h2>Gündemdeki konular</h2>
-      <p class="sub">Puan, kaynaklara göre yapılmış 100 üzerinden bir ilgi tahminidir, ölçülmüş bir değer değildir.</p>
-      <div class="topics" id="topics"></div>
-    </div>
-    <div class="sec">
-      <h2>Patlayan videolar</h2>
-      <p class="sub">"Normalin katı": video, o hesabın her zamanki izlenmesinin kaç katına çıktı.</p>
-      <div class="videos" id="videos"></div>
-    </div>
-  </section>
-
+  <!-- FİKİRLER -->
   <section class="screen" id="ekran-fikirler" hidden>
-    <div class="sec">
-      <h2>Varsak için video fikirleri</h2>
-      <p class="sub">Uygulamadaki verilere göre hazırlanmış, klinikte çekebileceğiniz videolar.</p>
-      <div class="ideas" id="ideas"></div>
+    <div class="seg" data-seg="fikirler">
+      <button class="on" data-v="bugun">Bugün<span class="dot" hidden></span></button>
+      <button data-v="uyarlama">Uyarlama<span class="dot" hidden></span></button>
+      <button data-v="arsiv">Arşiv</button>
+    </div>
+    <div class="view" data-view="fikirler:bugun">
+      <div class="sec">
+        <h2>Varsak için video fikirleri</h2>
+        <p class="sub">Uygulamadaki verilere göre hazırlanmış, klinikte çekebileceğiniz videolar. Her saat yenilenir.</p>
+        <div class="ideas" id="ideas"></div>
+      </div>
+    </div>
+    <div class="view" data-view="fikirler:uyarlama" hidden>
+      <div class="sec">
+        <h2>Uyarlama</h2>
+        <p class="sub">Ekip oyunları ve viral trendler, Varsak'a uyarlanmış hâlleriyle. Hayvanlı çekimlerde hayvanın rahat olduğundan emin olun.</p>
+        <div class="chips" id="adFilter">
+          <button class="chip on" data-af="">Tümü</button>
+          <button class="chip" data-af="Ekip oyunu">Ekip oyunları</button>
+          <button class="chip" data-af="Viral trend">Viral trendler</button>
+          <button class="chip" data-af="hayvansiz">Hayvan gerekmeyenler</button>
+        </div>
+        <div class="ideas" id="adapts"></div>
+      </div>
+    </div>
+    <div class="view" data-view="fikirler:arsiv" hidden>
+      <div class="sec">
+        <h2>Fikir arşivi</h2>
+        <p class="sub">Daha önce önerilen bütün fikirler, tarihe göre. Hiçbir fikir kaybolmaz.</p>
+        <div class="sec" id="archive"></div>
+      </div>
     </div>
   </section>
 
-  <p class="foot">Veriler herkese açık kaynaklardan derlenir ve her saat yenilenir; uygulama açıkken her 10 dakikada bir yeni veri olup olmadığına bakar. Takipçi sayıları farklı tarihlerden olabilir, her hesabın kaynağı yanında yazar. Çizimler Varsak Sosyal için özel hazırlanmıştır.</p>
+  <!-- KEŞFET -->
+  <section class="screen" id="ekran-kesfet" hidden>
+    <div class="seg" data-seg="kesfet">
+      <button class="on" data-v="hesaplar">Hesaplar<span class="dot" hidden></span></button>
+      <button data-v="trendler">Trendler</button>
+      <button data-v="gundem">Gündem<span class="dot" hidden></span></button>
+    </div>
+    <div class="view" data-view="kesfet:hesaplar">
+      <div class="sec">
+        <h2>Veteriner hesapları</h2>
+        <p class="sub">Dünyadan ve Türkiye'den, büyük ve küçük hesaplar. "Profile git"e dokununca hesap kendi uygulamasında açılır.</p>
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="ara" type="search" placeholder="Hesap ara (ör. kedi, İzmir, TikTok)" aria-label="Hesap ara"></label>
+        <div class="chips" id="filtre">
+          <button class="chip on" data-f="">Tümü</button>
+          <button class="chip" data-f="Türkiye">🇹🇷 Türkiye</button>
+          <button class="chip" data-f="kucuk">10 binin altı</button>
+          <button class="chip" data-f="TikTok">TikTok</button>
+          <button class="chip" data-f="Instagram">Instagram</button>
+          <button class="chip" data-f="YouTube">YouTube</button>
+        </div>
+        <div class="note"><img src="assets/telefon.svg" alt=""><div><b>Takipçi sayısı izlenmeyi belirlemez</b><p id="kucukOrnek">TikTok ve Reels videoları takipçiye değil, izlenme süresine ve etkileşime göre dağıtır.</p></div></div>
+        <div class="acc-list" id="hesapList"></div>
+      </div>
+    </div>
+    <div class="view" data-view="kesfet:trendler" hidden>
+      <div class="sec">
+        <h2>En çok patlayan formatlar</h2>
+        <p class="sub">Hesabın normal izlenmesinin en az 2 katına çıkan videoların oranı.</p>
+        <div class="podium" id="podium"></div>
+        <div class="card bars" id="formatBars"></div>
+      </div>
+      <div class="sec">
+        <h2>İlk 3 saniye</h2>
+        <p class="sub">Videonun ilk cümlesi (kanca) ve ilk karesine göre patlama oranı.</p>
+        <div class="card bars" id="kancaBars"></div>
+      </div>
+    </div>
+    <div class="view" data-view="kesfet:gundem" hidden>
+      <div class="sec">
+        <h2>Gündemdeki konular</h2>
+        <p class="sub">Puan, kaynaklara göre yapılmış 100 üzerinden bir ilgi tahminidir, ölçülmüş bir değer değildir.</p>
+        <div class="topics" id="topics"></div>
+      </div>
+      <div class="sec">
+        <h2>Patlayan videolar</h2>
+        <p class="sub">"Normalin katı": video, o hesabın her zamanki izlenmesinin kaç katına çıktı.</p>
+        <div class="videos" id="videos"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTLAR -->
+  <section class="screen" id="ekran-notlar" hidden>
+    <div class="sec">
+      <h2>Notlar</h2>
+      <p class="sub">Notlarınız sadece bu telefonda saklanır, kimse göremez. Uygulamayı silerseniz notlar da silinir.</p>
+      <div class="card composer">
+        <textarea id="noteText" placeholder="Bir not yazın… (ör. Pazartesi kuaför önce/sonra çekilecek)" aria-label="Not"></textarea>
+        <div class="row" id="noteTags">
+          <button class="ntag on" data-t="Not">Not</button>
+          <button class="ntag" data-t="Fikir">Fikir</button>
+          <button class="ntag" data-t="Vaka">Vaka</button>
+          <button class="ntag" data-t="Yapılacak">Yapılacak</button>
+          <button class="btn" id="noteSave">Kaydet</button>
+        </div>
+      </div>
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="noteSearch" type="search" placeholder="Notlarda ara" aria-label="Notlarda ara"></label>
+      <div class="note-list" id="noteList"></div>
+    </div>
+  </section>
+
+  <p class="foot">Veriler herkese açık kaynaklardan derlenir ve her saat yenilenir; uygulama açıkken her 10 dakikada bir yeni veri olup olmadığına bakar. Çizimler Varsak Sosyal için özel hazırlanmıştır.</p>
+  <p class="sign">Proje Sahibi: <b>Onur Can Çetin</b> · <span id="verLabel">Sürüm 1.1</span></p>
 </div>
 
 <nav class="tabs" aria-label="Ekranlar">
   <button class="tab on" data-s="ana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>Ana sayfa</button>
-  <button class="tab" data-s="hesaplar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.6 3 5.2"/></svg>Hesaplar</button>
-  <button class="tab" data-s="trendler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Trendler</button>
-  <button class="tab" data-s="gundem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="M10 9l5 3-5 3z"/></svg>Gündem</button>
-  <button class="tab" data-s="fikirler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.2 1 2.1h5c0-.9.4-1.7 1-2.1A6 6 0 0 0 12 3z"/></svg>Fikirler</button>
+  <button class="tab" data-s="varsak"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Varsak<span class="dot" hidden></span></button>
+  <button class="tab" data-s="fikirler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.2 1 2.1h5c0-.9.4-1.7 1-2.1A6 6 0 0 0 12 3z"/></svg>Fikirler<span class="dot" hidden></span></button>
+  <button class="tab" data-s="kesfet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Keşfet<span class="dot" hidden></span></button>
+  <button class="tab" data-s="notlar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z"/><path d="M9 11h6M9 15h6M9 7h3"/></svg>Notlar</button>
 </nav>
+
+<dialog id="dlgNews"><div class="dlg">
+  <div class="dlg-h"><h2>Yenilikler</h2><button class="close" data-close aria-label="Kapat">×</button></div>
+  <div id="newsList" class="sec"></div>
+</div></dialog>
+
+<dialog id="dlgSettings"><div class="dlg">
+  <div class="dlg-h"><h2>Ayarlar</h2><button class="close" data-close aria-label="Kapat">×</button></div>
+  <div class="field"><label for="setName">Uygulama adı</label><input type="text" id="setName" maxlength="30"></div>
+  <div class="field"><label for="setSub">Alt başlık</label><input type="text" id="setSub" maxlength="40"></div>
+  <div class="field"><label>Logo</label>
+    <div class="logo-row"><img id="setLogoPrev" src="icons/icon-192.png" alt=""><span class="file-btn">Resim seç<input type="file" id="setLogo" accept="image/*"></span><button class="ghost" id="setLogoReset">Varsayılan</button></div>
+  </div>
+  <div class="field"><label>Renk</label><div class="swatches" id="swatches"></div></div>
+  <p class="hint">Bu değişiklikler bu telefondaki uygulamada hemen görünür. Telefonun ana ekranındaki simge ve ad yeni APK ile değişir; Claude'a "simgeyi değiştir" demeniz yeterli.</p>
+  <div class="row2"><button class="ghost" id="setReset">Hepsini sıfırla</button><button class="btn" id="setSave" style="margin-top:0">Kaydet</button></div>
+</div></dialog>
 
 <script>
 (function () {
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
   var el = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  var store = {
+    get: function (k, d) { try { var v = localStorage.getItem("vs_" + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem("vs_" + k, JSON.stringify(v)); } catch (e) {} }
+  };
   var PLAT = { TikTok: "var(--tt)", Instagram: "var(--ig)", YouTube: "var(--yt)" };
   var KISA = { TikTok: "TT", Instagram: "IG", YouTube: "YT" };
   var CV = { TikTok: "cv-tt", Instagram: "cv-ig", YouTube: "cv-yt" };
   var BGS = ["bg-mint", "bg-coral", "bg-amber", "bg-sky", "bg-lilac"];
   var dec = function (x) { return (Math.round(x * 10) / 10).toString().replace(".", ","); };
   var int = function (x) { return Math.round(x).toLocaleString("tr-TR"); };
-  var short = function (x) { if (x == null || isNaN(x)) return "–"; x = Number(x); if (x >= 1e6) return dec(x / 1e6) + " Mn"; if (x >= 1e3) return Math.round(x / 1e3) + " B"; return String(x); };
+  var short = function (x) { if (x == null || isNaN(x)) return "–"; x = Number(x); if (x >= 1e6) return dec(x / 1e6) + " Mn"; if (x >= 1e3) return dec(x / 1e3).replace(/,0$/, "") + " B"; return String(x); };
   var safe = function (u) { return typeof u === "string" && /^https?:\/\//i.test(u) ? u : null; };
+  var trDate = function (s) { if (!s) return ""; var p = String(s).slice(0, 10).split("-"); return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : s; };
   var D = {};
 
+  // ---------- YENİ etiketi ----------
+  var KEYS = {
+    hesaplar: function (r) { return r.hesap; }, konular: function (r) { return r.konu; }, videolar: function (r) { return r.hesap + "|" + r.konu; },
+    fikirler: function (r) { return r.baslik; }, uyarlamalar: function (r) { return r.baslik; }, antalya: function (r) { return r.hesap; }
+  };
+  var seen = store.get("seen", null);
+  function initSeen() {
+    if (seen) return;
+    seen = {}; Object.keys(KEYS).forEach(function (c) { seen[c] = (D[c] || []).map(KEYS[c]); }); store.set("seen", seen);
+  }
+  function isNew(cat, r) { return !!seen && (seen[cat] || []).indexOf(KEYS[cat](r)) < 0; }
+  function unseenCount(cat) { return (D[cat] || []).filter(function (r) { return isNew(cat, r); }).length; }
+  function markSeen(cats) {
+    var ch = false;
+    cats.forEach(function (c) { (D[c] || []).forEach(function (r) { var k = KEYS[c](r); seen[c] = seen[c] || []; if (seen[c].indexOf(k) < 0) { seen[c].push(k); ch = true; } }); });
+    if (ch) { store.set("seen", seen); updateDots(); }
+  }
+  function badge(node, cat, r) { if (isNew(cat, r)) node.appendChild(el("span", "new", "YENİ")); return node; }
+  var VIEW_CATS = { "varsak:antalya": ["antalya"], "fikirler:bugun": ["fikirler"], "fikirler:uyarlama": ["uyarlamalar"], "kesfet:hesaplar": ["hesaplar"], "kesfet:gundem": ["konular", "videolar"] };
+  function updateDots() {
+    var vn = {}; Object.keys(VIEW_CATS).forEach(function (v) { vn[v] = VIEW_CATS[v].reduce(function (s, c) { return s + unseenCount(c); }, 0); });
+    document.querySelectorAll(".seg[data-seg]").forEach(function (sg) {
+      sg.querySelectorAll("button[data-v]").forEach(function (b) { var d = b.querySelector(".dot"); if (d) d.hidden = !vn[sg.dataset.seg + ":" + b.dataset.v]; });
+    });
+    document.querySelectorAll(".tab[data-s]").forEach(function (t) {
+      var d = t.querySelector(".dot"); if (!d) return;
+      d.hidden = !Object.keys(vn).some(function (v) { return v.indexOf(t.dataset.s + ":") === 0 && vn[v] > 0; });
+    });
+  }
+  var seenTimer;
+  function scheduleSeen() {
+    clearTimeout(seenTimer);
+    seenTimer = setTimeout(function () { var v = currentView(); if (VIEW_CATS[v]) markSeen(VIEW_CATS[v]); }, 2500);
+  }
+
+  // ---------- Yardımcılar ----------
   function art(text) {
     var t = String(text || "").toLocaleLowerCase("tr");
     var map = [
+      [["kuaför", "tıraş", "tüy"], "makas"], [["ekip oyunu", "yarış", "oyun"], "kupa"],
       [["kedi"], "kedi"], [["köpek", "havl"], "kopek"], [["kuş", "egzotik", "sürüngen", "muhabbet"], "kus"],
       [["mama", "beslen", "diyet", "çiğ"], "mama"], [["aşı"], "asi"], [["ücret", "fatura", "maliyet", "şeffaf"], "ucret"],
       [["eğitim", "eğitici", "davranış", "adım"], "egitim"], [["asla", "tehlikeli", "liste", "acil"], "liste"],
-      [["kamera", "bir gün", "hikâye", "hikaye", "hasta", "arkası", "günüm", "sessiz", "derleme"], "kamera"], [["tiktok", "efsane", "trend", "challenge", "sosyal", "viral", "ürün", "inceleme"], "telefon"]
+      [["kamera", "bir gün", "hikâye", "hikaye", "hasta", "arkası", "günüm", "sessiz", "derleme", "kavuşma", "60 saniye"], "kamera"],
+      [["tiktok", "efsane", "trend", "challenge", "sosyal", "viral", "ürün", "inceleme", "pov"], "telefon"]
     ];
     for (var i = 0; i < map.length; i++) for (var j = 0; j < map[i][0].length; j++) if (t.indexOf(map[i][0][j]) >= 0) return "assets/" + map[i][1] + ".svg";
     return "assets/stetoskop.svg";
   }
   function img(src, alt, cls) { var i = el("img", cls); i.src = src; i.alt = alt || ""; i.loading = "lazy"; return i; }
-  function initials(name) {
-    var parts = String(name).replace(/^(Dr\.|Vet\.\s*Hek\.)\s+/i, "").split(/\s+/);
-    return ((parts[0] || "?")[0] + ((parts[1] || "")[0] || "")).toLocaleUpperCase("tr");
-  }
+  function initials(name) { var parts = String(name).replace(/^(Dr\.|Vet\.\s*Hek\.)\s+/i, "").split(/\s+/); return ((parts[0] || "?")[0] + ((parts[1] || "")[0] || "")).toLocaleUpperCase("tr"); }
   function linkA(url, text, cls) { var u = safe(url); if (!u) return null; var a = el("a", cls, text); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer"; return a; }
   function yon(y) { return y === "yükseliyor" ? "↑ Yükseliyor" : (y === "düşüyor" ? "↓ Düşüyor" : "→ Sabit"); }
   function sorted(arr, key) { return (arr || []).slice().sort(function (a, b) { return (b[key] || 0) - (a[key] || 0); }); }
-  var ICONS = {
-    video: '<path d="M4 6h11v12H4zM15 10l5-3v10l-5-3"/>', up: '<path d="M4 17l6-6 4 4 6-6M14 9h6v6"/>',
-    time: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>', spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>'
-  };
+  var ICONS = { video: '<path d="M4 6h11v12H4zM15 10l5-3v10l-5-3"/>', up: '<path d="M4 17l6-6 4 4 6-6M14 9h6v6"/>', time: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>', spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>' };
   function ic(name) { var d = el("span", "ic"); d.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[name] + "</svg>"; return d; }
+  function logoSrc() { return (store.get("ayar", {}).logo) || "icons/icon-192.png"; }
 
+  // ---------- ANA SAYFA ----------
   function drawAna() {
     var oz = {}; (D.ozet || []).forEach(function (r) { oz[r.anahtar] = r; });
     var topF = sorted(D.formatlar, "patlama_orani")[0], topK = sorted(D.kancalar, "patlama_orani")[0];
     var lede = $("lede"); lede.replaceChildren();
     if (oz.patlama && topF && topK) lede.append("Evcil hayvan videolarının ", el("b", null, "%" + dec(oz.patlama.deger)), "'i hesabının normalinin iki katını aşıyor. Şu an en çok ", el("b", null, topF.format.toLocaleLowerCase("tr")), " videolar ve ", el("b", null, topK.kanca.toLocaleLowerCase("tr")), " ile açılanlar tutuyor.");
+    var v = D.varsak, vm = $("varsakMini"); vm.replaceChildren();
+    if (v) {
+      var t = el("div"); t.append(el("b", null, v.kullanici), el("small", null, "Google " + dec(v.google.puan) + " ★ · " + v.gonderi + " gönderi"));
+      var n = el("div", "v", short(v.takipci)); n.appendChild(el("small", "muted", "takipçi"));
+      vm.append(img(logoSrc()), t, n); vm.hidden = false;
+    } else vm.hidden = true;
     var st = $("stats"); st.replaceChildren();
     var icn = { analiz_video: "video", patlama: "up", sure: "time", ilk_kare: "spark" };
     (D.ozet || []).forEach(function (r, i) {
-      var c = el("div", "stat s" + ((i % 4) + 1)); var v = Number(r.deger);
-      c.append(ic(icn[r.anahtar] || "spark"), el("div", "v", r.birim === "%" ? "%" + dec(v) : (v >= 1000 ? int(v) : dec(v) + " " + r.birim)), el("div", "l", r.etiket), el("div", "n", r.not || ""));
+      var c = el("div", "stat s" + ((i % 4) + 1)); var val = Number(r.deger);
+      c.append(ic(icn[r.anahtar] || "spark"), el("div", "v", r.birim === "%" ? "%" + dec(val) : (val >= 1000 ? int(val) : dec(val) + " " + r.birim)), el("div", "l", r.etiket), el("div", "n", r.not || ""));
       st.appendChild(c);
     });
-    var f = (D.fikirler || [])[0], t = $("today"); t.replaceChildren();
-    if (f) { var body = el("div"); body.append(el("p", "kicker", f.format + " · " + f.sure), el("h3", null, f.baslik), el("p", "open", "Açılış: " + f.kanca)); t.append(img(art(f.konu + " " + f.baslik)), body); }
+    var f = (D.fikirler || [])[0], td = $("today"); td.replaceChildren();
+    if (f) { var body = el("div"); var h = el("h3", null, f.baslik); badge(h, "fikirler", f); body.append(el("p", "kicker", f.format + " · " + f.sure), h, el("p", "open", "Açılış: " + f.kanca)); td.append(img(art(f.konu + " " + f.baslik)), body); }
     var s = $("stories"); s.replaceChildren();
     sorted((D.hesaplar || []).filter(function (r) { return r.ulke === "Türkiye"; }), "takipci").forEach(function (r) {
       var a = linkA(r.link, null, "story") || el("div", "story");
@@ -355,7 +649,8 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
   }
   function topicCard(r, full) {
     var c = el("article", "card topic");
-    var mid = el("div"); mid.append(el("h3", null, r.konu), el("span", "trend" + (r.yon === "yükseliyor" ? "" : (r.yon === "düşüyor" ? " down" : " flat")), yon(r.yon)));
+    var mid = el("div"); var h = el("h3", null, r.konu); badge(h, "konular", r);
+    mid.append(h, el("span", "trend" + (r.yon === "yükseliyor" ? "" : (r.yon === "düşüyor" ? " down" : " flat")), yon(r.yon)));
     if (!full) mid.appendChild(el("p", "ex", r.ornek));
     var ring = el("div", "ringscore"); ring.style.setProperty("--p", r.puan); ring.appendChild(el("span", null, String(r.puan))); ring.setAttribute("aria-label", "İlgi puanı " + r.puan);
     c.append(img(art(r.konu)), mid, ring);
@@ -363,6 +658,102 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
     return c;
   }
 
+  // ---------- VARSAK ----------
+  function drawVarsak() {
+    var v = D.varsak; if (!v) return;
+    var p = $("profile"); p.replaceChildren();
+    var hd = el("div", "p-head"); var t = el("div"); t.append(el("b", null, v.hesap), el("small", null, v.kullanici + " · son kontrol " + new Date(v.guncelleme).toLocaleString("tr-TR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })));
+    hd.append(img(logoSrc()), t);
+    var nums = el("div", "p-nums"); [["Takipçi", int(v.takipci)], ["Gönderi", int(v.gonderi)], ["Takip", int(v.takip)]].forEach(function (x) { var d = el("div"); d.append(el("b", null, x[1]), el("span", null, x[0])); nums.appendChild(d); });
+    var btns = el("div", "row2"); var a1 = linkA(v.link, "Instagram'da aç", "btn"); var a2 = v.kardes_hesap ? linkA(v.kardes_hesap.link, v.kardes_hesap.ad, "btn alt") : null;
+    if (a1) btns.appendChild(a1); if (a2) btns.appendChild(a2);
+    p.append(hd, nums, el("p", "p-bio", v.bio), btns);
+    var rc = $("reelChart"); rc.replaceChildren();
+    var reels = (v.reels || []).slice().reverse(); var max = Math.max.apply(null, reels.map(function (r) { return r.izlenme; }).concat([1]));
+    var top = sorted(v.reels, "izlenme")[0];
+    reels.forEach(function (r) {
+      var a = linkA(r.link, null, null) || el("div"); if (top && r.link === top.link) a.classList.add("top");
+      var bar = el("i"); bar.style.height = Math.max(3, r.izlenme / max * 100) + "%";
+      a.append(el("span", null, short(r.izlenme)), bar, el("em", null, "#" + r.sira));
+      a.setAttribute("aria-label", r.sira + ". Reels, " + int(r.izlenme) + " izlenme"); rc.appendChild(a);
+    });
+    var ri = $("reelInsight"); ri.replaceChildren();
+    if (v.reels && v.reels.length) {
+      var avg = v.reels.reduce(function (s, r) { return s + r.izlenme; }, 0) / v.reels.length;
+      var txt = el("p"); txt.append("Son " + v.reels.length + " Reels ortalama ", el("b", null, short(avg) + " izlenme"), " aldı, takipçi sayınızın yaklaşık ", el("b", null, dec(avg / v.takipci) + " katı"), ". En çok izlenen videonuz ", el("b", null, short(top.izlenme)), " ile takipçinizin " + Math.round(top.izlenme / v.takipci) + " katına ulaştı. Reels'leriniz takipçi dışına çıkıyor, düzenli paylaşmak büyümeyi hızlandırır.");
+      ri.append(img("assets/telefon.svg"), txt);
+    }
+    var g = v.google, gc = $("googleCard"); gc.replaceChildren();
+    if (g) {
+      var big = el("div", "big", dec(g.puan)); var info = el("div");
+      info.append(el("div", "stars", "★★★★★".slice(0, Math.round(g.puan)) + "☆☆☆☆☆".slice(0, 5 - Math.round(g.puan))), el("b", null, int(g.yorum) + " değerlendirme"), el("small", null, g.kaynak + " · " + g.tarih + (v.yandex ? " · Yandex: " + dec(v.yandex.puan) + " ★ (" + v.yandex.yorum + " yorum)" : "")));
+      gc.append(big, info); var ga = linkA(g.link, "Google'da yorumları gör", "btn"); if (ga) gc.appendChild(ga);
+    }
+  }
+  function drawAntalya() {
+    var rows = sorted(D.antalya, "takipci"); if (!rows.length) return;
+    var maxF = rows[0].takipci || 1;
+    var f = $("antFollow"); f.replaceChildren();
+    rows.forEach(function (r, i) { f.appendChild(cmpRow(r, (i + 1) + ". " + r.hesap, r.ilce + " · " + r.gonderi + " gönderi", short(r.takipci), r.takipci / maxF)); });
+    var withR = rows.map(function (r) { return Object.assign({ oran: r.gonderi ? r.takipci / r.gonderi : 0 }, r); }).sort(function (a, b) { return b.oran - a.oran; });
+    var maxR = withR[0].oran || 1, ra = $("antRatio"); ra.replaceChildren();
+    withR.forEach(function (r) { ra.appendChild(cmpRow(r, r.hesap, r.ilce, int(r.oran) + " / gönderi", r.oran / maxR)); });
+    var me = rows.filter(function (r) { return r.varsak; })[0], meRank = rows.indexOf(me) + 1, meR = withR.indexOf(withR.filter(function (r) { return r.varsak; })[0]) + 1;
+    var second = withR.filter(function (r) { return !r.varsak; })[0];
+    var ai = $("antInsight"); ai.replaceChildren();
+    if (me) {
+      var t = el("p"); t.append("Varsak, listedeki Antalya klinikleri arasında takipçide ", el("b", null, meRank + ". sırada"), ". Gönderi başına takipçide ", el("b", null, meR + ". sırada"));
+      if (meR === 1 && second) t.append(": her gönderi ortalama ", el("b", null, int(me.takipci / me.gonderi) + " takipçi"), " getiriyor, en yakın rakip " + int(second.oran) + ". Daha sık paylaşım yapılırsa fark hızla açılır.");
+      else t.append(".");
+      ai.append(img("assets/kupa.svg"), t);
+    }
+  }
+  function cmpRow(r, name, sub, val, ratio) {
+    var d = el("div", "cmp-row" + (r.varsak ? " me" : ""));
+    var nm = el("div", "nm", name); badge(nm, "antalya", r); var sm = el("small", null, sub + " "); var a = linkA(r.link, "↗"); if (a) sm.appendChild(a); nm.appendChild(sm);
+    var tr = el("div", "track"); var i = el("i"); i.style.width = Math.max(2, ratio * 100) + "%"; tr.appendChild(i);
+    d.append(nm, el("span", "v", val), tr); return d;
+  }
+
+  // ---------- FİKİRLER ----------
+  function ideaCard(r, i, cat) {
+    var c = el("article", "card idea");
+    var h = el("div", "head " + BGS[i % BGS.length]); h.append(img(art(r.konu + " " + r.baslik)), el("span", "num", String(i + 1)));
+    var b = el("div", "body"); var tg = el("div", "tags"); [[r.format, ""], [r.sure, " t2"], [r.konu, " t3"]].forEach(function (x) { if (x[0]) tg.appendChild(el("span", "tag" + x[1], x[0])); });
+    var hk = el("div", "hook"); hk.append(el("b", null, "Açılış"), r.kanca);
+    var ti = el("h3", null, r.baslik); if (cat) badge(ti, cat, r);
+    b.append(ti, tg, hk, el("p", "why", r.neden)); c.append(h, b); return c;
+  }
+  function drawFikirler() { var host = $("ideas"); host.replaceChildren(); (D.fikirler || []).forEach(function (r, i) { host.appendChild(ideaCard(r, i, "fikirler")); }); }
+  var adF = "";
+  function drawUyarlama() {
+    var host = $("adapts"); host.replaceChildren();
+    (D.uyarlamalar || []).filter(function (r) { return !adF || (adF === "hayvansiz" ? !r.hayvan : r.tur === adF); }).forEach(function (r, i) {
+      var c = el("article", "card adapt");
+      var h = el("div", "head " + BGS[(i + 2) % BGS.length]); h.append(img(art((r.tur === "Ekip oyunu" ? "ekip oyunu " : "") + r.baslik + " " + r.varsak)), el("span", "kind", r.tur));
+      var b = el("div", "body"); var ti = el("h3", null, r.baslik); badge(ti, "uyarlamalar", r);
+      var from = el("p", "from"); from.append(el("b", null, "Orijinal: "), r.orijinal);
+      var tg = el("div", "tags"); [[r.kisi, ""], [r.sure, " t2"], [r.zorluk, " t3"]].forEach(function (x) { if (x[0]) tg.appendChild(el("span", "tag" + x[1], x[0])); });
+      var hk = el("div", "hook"); hk.append(el("b", null, "Varsak versiyonu"), r.varsak);
+      var det = el("details"); det.appendChild(el("summary", null, "Nasıl çekilir?")); var ol = el("ol"); (r.nasil || []).forEach(function (s) { ol.appendChild(el("li", null, s)); }); det.appendChild(ol);
+      b.append(ti, from, tg, hk, det, el("p", "why", r.neden));
+      if (r.hayvan) b.appendChild(el("div", "warn", "Hayvanlı çekim: sahibinden izin alın, hayvan gerginse çekimi bırakın."));
+      c.append(h, b); host.appendChild(c);
+    });
+    if (!host.children.length) host.appendChild(el("p", "sub", "Bu filtrede uyarlama yok."));
+  }
+  function drawArsiv() {
+    var host = $("archive"); host.replaceChildren();
+    var by = {}; (D.fikir_arsivi || []).forEach(function (r) { (by[r.tarih] = by[r.tarih] || []).push(r); });
+    Object.keys(by).sort().reverse().forEach(function (d) {
+      var g = el("div", "arch-day"); g.appendChild(el("h3", null, trDate(d) + " · " + by[d].length + " fikir"));
+      by[d].forEach(function (r) { var it = el("div", "card arch-item"); var t = el("div"); t.append(el("b", null, r.baslik), el("small", null, [r.format, r.sure, r.konu].filter(Boolean).join(" · "))); it.append(img(art(r.konu + " " + r.baslik)), t); g.appendChild(it); });
+      host.appendChild(g);
+    });
+    if (!host.children.length) host.appendChild(el("p", "sub", "Arşiv henüz boş."));
+  }
+
+  // ---------- KEŞFET ----------
   var filtre = "", arama = "";
   function drawHesaplar() {
     var q = arama.toLocaleLowerCase("tr"), all = D.hesaplar || [];
@@ -375,11 +766,11 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
       return true;
     }), "takipci");
     var list = $("hesapList"); list.replaceChildren();
-    if (!rows.length) { list.appendChild(el("p", "sub", "Bu filtrede hesap bulunamadı.")); }
+    if (!rows.length) list.appendChild(el("p", "sub", "Bu filtrede hesap bulunamadı."));
     rows.forEach(function (r) {
       var c = el("article", "card acc");
       var av = el("div", "av", initials(r.hesap)); av.style.background = PLAT[r.platform] || "var(--accent)"; av.appendChild(el("i", null, KISA[r.platform] || ""));
-      var mid = el("div"); var nm = el("div", "nm", r.hesap); if (r.ulke === "Türkiye") nm.appendChild(el("span", "flag", "TR"));
+      var mid = el("div"); var nm = el("div", "nm", r.hesap); if (r.ulke === "Türkiye") nm.appendChild(el("span", "flag", "TR")); badge(nm, "hesaplar", r);
       mid.append(nm, el("div", "meta", r.kategori + " · " + r.bilinen), el("div", "meta", "Kaynak: " + r.kaynak + ", " + r.kaynak_tarihi));
       var m = el("div", "meter"); var fi = el("i"); fi.style.width = Math.max(2, Math.log10((r.takipci || 0) + 1) / maxLog * 100) + "%"; fi.style.background = PLAT[r.platform] || "var(--accent)"; m.appendChild(fi); mid.appendChild(m);
       var fol = el("div", "fol"); fol.appendChild(el("b", null, short(r.takipci)));
@@ -389,41 +780,32 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
     var v = sorted((D.videolar || []).filter(function (x) { return x.kat != null; }), "kat")[0];
     if (v) $("kucukOrnek").textContent = "Videolar takipçiye değil, izlenme süresine ve etkileşime göre dağıtılır. Örneğin " + v.hesap + " hesabının bir videosu, o hesabın normal izlenmesinin " + v.kat + " katına çıktı (" + short(v.izlenme) + " izlenme).";
   }
-
   function barList(host, rows) {
-    host.replaceChildren();
-    var max = Math.max.apply(null, rows.map(function (r) { return r.value; }).concat([1]));
+    host.replaceChildren(); var max = Math.max.apply(null, rows.map(function (r) { return r.value; }).concat([1]));
     rows.forEach(function (r) {
       var b = el("div", "bar-row"); var top = el("div", "top"); top.append(el("span", null, r.label), el("span", null, r.valueText));
       b.appendChild(top); if (r.sub) b.appendChild(el("small", null, r.sub));
-      var tr = el("div", "track"); var f = el("div", "fill"); f.style.width = (r.value / max * 100) + "%"; f.style.background = r.color; tr.appendChild(f); b.appendChild(tr);
-      host.appendChild(b);
+      var tr = el("div", "track"); var f = el("div", "fill"); f.style.width = (r.value / max * 100) + "%"; f.style.background = r.color; tr.appendChild(f); b.appendChild(tr); host.appendChild(b);
     });
   }
   function drawTrendler() {
-    var fs = sorted(D.formatlar, "patlama_orani");
-    var pod = $("podium"); pod.replaceChildren();
+    var fs = sorted(D.formatlar, "patlama_orani"), pod = $("podium"); pod.replaceChildren();
     var medal = ["linear-gradient(135deg,#f59e0b,#fbbf24)", "linear-gradient(135deg,#64748b,#94a3b8)", "linear-gradient(135deg,#b45309,#d97706)"];
-    fs.slice(0, 3).forEach(function (r, i) {
-      var c = el("div", "card pod"); var rk = el("span", "rank", String(i + 1)); rk.style.background = medal[i];
-      c.append(rk, img(art(r.format)), el("span", "big", "%" + dec(r.patlama_orani)), el("span", "nm", r.format), el("small", null, "patlayınca " + dec(r.medyan_kat) + " kat"));
-      pod.appendChild(c);
-    });
+    fs.slice(0, 3).forEach(function (r, i) { var c = el("div", "card pod"); var rk = el("span", "rank", String(i + 1)); rk.style.background = medal[i]; c.append(rk, img(art(r.format)), el("span", "big", "%" + dec(r.patlama_orani)), el("span", "nm", r.format), el("small", null, "patlayınca " + dec(r.medyan_kat) + " kat")); pod.appendChild(c); });
     barList($("formatBars"), fs.slice(3).map(function (r) { return { label: r.format, sub: int(r.video) + " video · patlayınca " + dec(r.medyan_kat) + " kat", value: r.patlama_orani, valueText: "%" + dec(r.patlama_orani), color: "linear-gradient(90deg, var(--accent), var(--accent-2))" }; }));
     barList($("kancaBars"), sorted(D.kancalar, "patlama_orani").map(function (r) { return { label: r.kanca, sub: r.tur + " · " + int(r.video) + " video", value: r.patlama_orani, valueText: "%" + dec(r.patlama_orani), color: r.tur === "İlk kare" ? "linear-gradient(90deg, #a855f7, var(--ig))" : "linear-gradient(90deg, var(--coral), var(--amber))" }; }));
   }
-
   function drawGundem() {
     var t = $("topics"); t.replaceChildren(); sorted(D.konular, "puan").forEach(function (r) { t.appendChild(topicCard(r, true)); });
     var v = $("videos"); v.replaceChildren();
     sorted(D.videolar, "izlenme").forEach(function (r) {
-      var c = el("article", "card video");
-      var cv = el("div", "cover " + (CV[r.platform] || "bg-mint"));
+      var c = el("article", "card video"); var cv = el("div", "cover " + (CV[r.platform] || "bg-mint"));
       cv.append(img(art(r.konu + " " + r.format)), el("span", "pl", r.platform || ""));
       if (r.sure_sn != null) cv.appendChild(el("span", "du", r.sure_sn + " sn"));
       cv.appendChild(el("span", "vw", short(r.izlenme)));
       var pl = el("span", "play"); pl.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>'; cv.appendChild(pl);
-      var body = el("div", "body"); body.append(el("h3", null, r.konu), el("div", "meta muted", r.hesap + (r.tarih ? " · " + r.tarih.split("-").reverse().join(".") : "")));
+      var body = el("div", "body"); var h = el("h3", null, r.konu); badge(h, "videolar", r);
+      body.append(h, el("div", "meta muted", r.hesap + (r.tarih ? " · " + trDate(r.tarih) : "")));
       var stt = el("div", "vstats"); [["Beğeni", short(r.begeni)], ["Paylaşım", short(r.paylasim)], ["Normalin", r.kat != null ? r.kat + "×" : "–"]].forEach(function (x) { var d = el("div"); d.append(el("b", null, x[1]), el("span", null, x[0])); stt.appendChild(d); });
       body.appendChild(stt);
       var a = linkA(r.link, r.link_tur === "video" ? "Videoyu izle" : (r.link_tur === "arama" ? "Videoyu ara" : "Hesapta izle"), "btn"); if (a) body.appendChild(a);
@@ -431,45 +813,136 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
     });
   }
 
-  function drawFikirler() {
-    var host = $("ideas"); host.replaceChildren();
-    (D.fikirler || []).forEach(function (r, i) {
-      var c = el("article", "card idea");
-      var h = el("div", "head " + BGS[i % BGS.length]); h.append(img(art(r.konu + " " + r.baslik)), el("span", "num", String(i + 1)));
-      var b = el("div", "body"); var tg = el("div", "tags"); [[r.format, ""], [r.sure, " t2"], [r.konu, " t3"]].forEach(function (x) { tg.appendChild(el("span", "tag" + x[1], x[0])); });
-      var hk = el("div", "hook"); hk.append(el("b", null, "Açılış"), r.kanca);
-      b.append(el("h3", null, r.baslik), tg, hk, el("p", "why", r.neden));
-      c.append(h, b); host.appendChild(c);
+  // ---------- NOTLAR ----------
+  var notes = store.get("notes", []), noteTag = "Not", noteQ = "";
+  function drawNotes() {
+    var host = $("noteList"); host.replaceChildren();
+    var q = noteQ.toLocaleLowerCase("tr");
+    var list = notes.filter(function (n) { return !q || (n.text + " " + n.tag).toLocaleLowerCase("tr").indexOf(q) >= 0; })
+      .sort(function (a, b) { return (b.pin - a.pin) || (b.t - a.t); });
+    if (!list.length) { var e = el("div", "empty"); e.append(img("assets/liste.svg"), el("p", null, notes.length ? "Aramayla eşleşen not yok." : "Henüz not yok. İlk notunuzu yukarıya yazın.")); host.appendChild(e); return; }
+    list.forEach(function (n) {
+      var c = el("article", "card nitem" + (n.pin ? " pin" : ""));
+      var meta = el("div", "meta"); meta.append(el("span", "tag", n.tag), el("span", null, new Date(n.t).toLocaleString("tr-TR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })));
+      var acts = el("div", "acts");
+      var pin = el("button", null, n.pin ? "Sabitlemeyi kaldır" : "Sabitle"); pin.onclick = function () { n.pin = n.pin ? 0 : 1; saveNotes(); };
+      var del = el("button", null, "Sil"); del.onclick = function () { if (del.dataset.ok) { notes = notes.filter(function (x) { return x !== n; }); saveNotes(); } else { del.dataset.ok = 1; del.textContent = "Emin misiniz?"; setTimeout(function () { delete del.dataset.ok; del.textContent = "Sil"; }, 3000); } };
+      acts.append(pin, del); meta.appendChild(acts);
+      c.append(el("p", null, n.text), meta); host.appendChild(c);
     });
   }
-  function drawAll() { drawAna(); drawHesaplar(); drawTrendler(); drawGundem(); drawFikirler(); }
+  function saveNotes() { store.set("notes", notes); drawNotes(); }
+  $("noteSave").onclick = function () { var t = $("noteText").value.trim(); if (!t) { $("noteText").focus(); return; } notes.push({ text: t, tag: noteTag, t: Date.now(), pin: 0 }); $("noteText").value = ""; saveNotes(); };
+  $("noteTags").addEventListener("click", function (e) { var b = e.target.closest(".ntag"); if (!b) return; noteTag = b.dataset.t; document.querySelectorAll(".ntag").forEach(function (x) { x.classList.toggle("on", x === b); }); });
+  $("noteSearch").addEventListener("input", function (e) { noteQ = e.target.value.trim(); drawNotes(); });
 
-  var SCREENS = ["ana", "hesaplar", "trendler", "gundem", "fikirler"];
+  // ---------- AYARLAR ----------
+  var THEMES = [
+    { ad: "Veteriner yeşili", a: "#0f766e", a2: "#14b8a6", h1: "#0f766e", h2: "#0e7490", g: "#2dd4bf" },
+    { ad: "Okyanus", a: "#1d4ed8", a2: "#38bdf8", h1: "#1e40af", h2: "#0369a1", g: "#7dd3fc" },
+    { ad: "Lavanta", a: "#7c3aed", a2: "#c084fc", h1: "#6d28d9", h2: "#9333ea", g: "#e9d5ff" },
+    { ad: "Mercan", a: "#e11d48", a2: "#fb7185", h1: "#be123c", h2: "#ea580c", g: "#fda4af" },
+    { ad: "Gün batımı", a: "#c2410c", a2: "#f59e0b", h1: "#c2410c", h2: "#b45309", g: "#fcd34d" },
+    { ad: "Gece", a: "#334155", a2: "#64748b", h1: "#1e293b", h2: "#334155", g: "#94a3b8" }
+  ];
+  var DEF = { ad: "Varsak Sosyal", alt: "Varsak Veteriner Polikliniği", logo: null, tema: 0 };
+  function applySettings() {
+    var s = Object.assign({}, DEF, store.get("ayar", {}));
+    $("appName").textContent = s.ad || DEF.ad; $("appSub").textContent = s.alt || DEF.alt; document.title = s.ad || DEF.ad;
+    $("appLogo").src = s.logo || "icons/icon-192.png";
+    var t = THEMES[s.tema] || THEMES[0], r = document.documentElement.style;
+    if (s.tema) { r.setProperty("--accent", t.a); r.setProperty("--accent-2", t.a2); } else { r.removeProperty("--accent"); r.removeProperty("--accent-2"); }
+    r.setProperty("--hero1", t.h1); r.setProperty("--hero2", t.h2); r.setProperty("--glow", t.g);
+    var mt = document.querySelector('meta[name="theme-color"]'); if (mt) mt.content = t.h1;
+  }
+  var draft = null;
+  function openSettings() {
+    draft = Object.assign({}, DEF, store.get("ayar", {}));
+    $("setName").value = draft.ad; $("setSub").value = draft.alt; $("setLogoPrev").src = draft.logo || "icons/icon-192.png";
+    var sw = $("swatches"); sw.replaceChildren();
+    THEMES.forEach(function (t, i) { var b = el("button", "sw" + (i === draft.tema ? " on" : "")); b.style.background = "linear-gradient(135deg," + t.h1 + "," + t.a2 + ")"; b.title = t.ad; b.setAttribute("aria-label", t.ad); b.onclick = function () { draft.tema = i; sw.querySelectorAll(".sw").forEach(function (x) { x.classList.toggle("on", x === b); }); }; sw.appendChild(b); });
+    $("dlgSettings").showModal();
+  }
+  $("setLogo").addEventListener("change", function (e) {
+    var f = e.target.files && e.target.files[0]; if (!f) return;
+    var rd = new FileReader(); rd.onload = function () {
+      var im = new Image(); im.onload = function () {
+        var c = document.createElement("canvas"); c.width = c.height = 256; var x = c.getContext("2d");
+        var s = Math.min(im.width, im.height); x.drawImage(im, (im.width - s) / 2, (im.height - s) / 2, s, s, 0, 0, 256, 256);
+        draft.logo = c.toDataURL("image/png"); $("setLogoPrev").src = draft.logo;
+      }; im.src = rd.result;
+    }; rd.readAsDataURL(f);
+  });
+  $("setLogoReset").onclick = function () { draft.logo = null; $("setLogoPrev").src = "icons/icon-192.png"; };
+  $("setSave").onclick = function () { draft.ad = $("setName").value.trim() || DEF.ad; draft.alt = $("setSub").value.trim() || DEF.alt; store.set("ayar", draft); applySettings(); drawAll(); $("dlgSettings").close(); };
+  $("setReset").onclick = function () { store.set("ayar", {}); applySettings(); drawAll(); $("dlgSettings").close(); };
+  $("btnSettings").onclick = openSettings;
+
+  // ---------- YENİLİKLER ----------
+  function latestVer() { return (D.surumler || [])[0]; }
+  function drawNews() {
+    var host = $("newsList"); host.replaceChildren();
+    (D.surumler || []).forEach(function (s) { var d = el("div", "ver"); d.append(el("b", null, "Sürüm " + s.surum + " · " + s.baslik), el("small", null, trDate(s.tarih))); var ul = el("ul"); (s.maddeler || []).forEach(function (m) { ul.appendChild(el("li", null, m)); }); d.appendChild(ul); host.appendChild(d); });
+    var l = latestVer(); if (!l) return;
+    $("verLabel").textContent = "Sürüm " + l.surum;
+    var unseen = store.get("ver", null) !== l.surum;
+    $("dotNews").hidden = !unseen; $("updCard").hidden = !unseen;
+    $("updTitle").textContent = "Sürüm " + l.surum + " geldi"; $("updSub").textContent = l.baslik;
+  }
+  function openNews() { $("dlgNews").showModal(); var l = latestVer(); if (l) { store.set("ver", l.surum); $("dotNews").hidden = true; $("updCard").hidden = true; } }
+  $("btnNews").onclick = openNews; $("updOpen").onclick = openNews;
+  document.querySelectorAll("dialog").forEach(function (d) { d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-close]")) d.close(); }); });
+
+  // ---------- Gezinme ----------
+  var SCREENS = ["ana", "varsak", "fikirler", "kesfet", "notlar"];
+  var sub = { varsak: "hesabim", fikirler: "bugun", kesfet: "hesaplar" };
+  var cur = "ana";
+  function currentView() { return cur + ":" + (sub[cur] || ""); }
+  function setSub(screen, v) {
+    sub[screen] = v;
+    document.querySelectorAll('.seg[data-seg="' + screen + '"] button').forEach(function (b) { b.classList.toggle("on", b.dataset.v === v); });
+    document.querySelectorAll('[data-view^="' + screen + ':"]').forEach(function (x) { x.hidden = x.dataset.view !== screen + ":" + v; });
+    scheduleSeen();
+  }
   function setFilter(f) { filtre = f || ""; document.querySelectorAll(".chip[data-f]").forEach(function (x) { x.classList.toggle("on", x.dataset.f === filtre); }); drawHesaplar(); }
   function open(name, noScroll) {
+    var parts = String(name || "").split("/"); name = parts[0];
     if (SCREENS.indexOf(name) < 0) name = "ana";
+    cur = name;
     SCREENS.forEach(function (s) { $("ekran-" + s).hidden = s !== name; });
     document.querySelectorAll(".tab").forEach(function (t) { t.classList.toggle("on", t.dataset.s === name); });
+    if (parts[1] && sub[name] !== undefined) setSub(name, parts[1]);
     if (location.hash.slice(1) !== name) history.replaceState(null, "", "#" + name);
     if (!noScroll) window.scrollTo(0, 0);
+    scheduleSeen();
   }
   document.addEventListener("click", function (e) {
+    var sg = e.target.closest(".seg[data-seg] button"); if (sg) { setSub(sg.parentNode.dataset.seg, sg.dataset.v); return; }
     var t = e.target.closest("[data-s],[data-goto]");
-    if (t) { if (t.dataset.filter != null) setFilter(t.dataset.filter); open(t.dataset.s || t.dataset.goto); return; }
-    var c = e.target.closest(".chip[data-f]"); if (c) setFilter(c.dataset.f);
+    if (t) { if (t.dataset.filter != null) setFilter(t.dataset.filter); var name = t.dataset.s || t.dataset.goto; open(name); if (t.dataset.sub) setSub(name, t.dataset.sub); return; }
+    var c = e.target.closest(".chip[data-f]"); if (c) { setFilter(c.dataset.f); return; }
+    var af = e.target.closest(".chip[data-af]"); if (af) { adF = af.dataset.af; document.querySelectorAll(".chip[data-af]").forEach(function (x) { x.classList.toggle("on", x === af); }); drawUyarlama(); }
   });
   $("ara").addEventListener("input", function (e) { arama = e.target.value.trim(); drawHesaplar(); });
   window.addEventListener("hashchange", function () { open(location.hash.slice(1), true); });
-  open(location.hash.slice(1), true);
 
-  var FILES = ["ozet", "hesaplar", "formatlar", "kancalar", "videolar", "konular", "fikirler"];
+  function safeDraw(fn) { try { fn(); } catch (err) { console.error(err); } }
+  function drawAll() { [drawAna, drawVarsak, drawAntalya, drawFikirler, drawUyarlama, drawArsiv, drawHesaplar, drawTrendler, drawGundem, drawNews].forEach(safeDraw); updateDots(); }
+
+  // ---------- Veri: açılışta ve her 10 dakikada bir ----------
+  var FILES = ["ozet", "hesaplar", "formatlar", "kancalar", "videolar", "konular", "fikirler", "uyarlamalar", "fikir_arsivi", "varsak", "antalya", "surumler"];
   function load() {
     var bust = "?t=" + Date.now();
-    return Promise.all(FILES.map(function (f) { return fetch("data/" + f + ".json" + bust, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(f); return r.json(); }); }))
-      .then(function (res) { FILES.forEach(function (f, i) { D[f] = res[i]; }); drawAll(); return fetch("data/meta.json" + bust, { cache: "no-store" }).then(function (r) { return r.json(); }); })
-      .then(function (m) { var d = new Date(m.guncelleme); $("guncel").textContent = "Güncel · " + d.toLocaleString("tr-TR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); })
-      .catch(function () { $("guncel").textContent = "Çevrimdışı"; if (!D.ozet) { $("lede").replaceChildren(el("span", "err", "Veriler yüklenemedi. İnternet bağlantınızı kontrol edip uygulamayı yeniden açın.")); } });
+    return Promise.all(FILES.map(function (f) {
+      return fetch("data/" + f + ".json" + bust, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(f); return r.json(); }).then(function (j) { D[f] = j; return true; }).catch(function () { return false; });
+    })).then(function (ok) {
+      if (!ok.some(Boolean)) throw new Error("veri yok");
+      initSeen(); drawAll(); scheduleSeen();
+      return fetch("data/meta.json" + bust, { cache: "no-store" }).then(function (r) { return r.json(); });
+    }).then(function (m) { var d = new Date(m.guncelleme); $("guncel").textContent = "Güncel " + d.toLocaleString("tr-TR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); })
+      .catch(function () { $("guncel").textContent = "Çevrimdışı"; if (!D.ozet) $("lede").replaceChildren(el("span", "err", "Veriler yüklenemedi. İnternet bağlantınızı kontrol edip uygulamayı yeniden açın.")); });
   }
+  applySettings(); drawNotes(); open(location.hash.slice(1), true);
   load();
   setInterval(load, 10 * 60 * 1000);
   document.addEventListener("visibilitychange", function () { if (!document.hidden) load(); });

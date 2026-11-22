@@ -1,0 +1,90 @@
+[
+ {
+  "hesap": "Varsak Veteriner Polikliniği",
+  "kullanici": "@varsakveterinerpoliklinigi",
+  "ilce": "Kepez",
+  "takipci": 8831,
+  "gonderi": 76,
+  "varsak": true,
+  "link": "https://www.instagram.com/varsakveterinerpoliklinigi/",
+  "kaynak": "Instagram profili",
+  "tarih": "22.11.2026"
+ },
+ {
+  "hesap": "Antalya Veteriner Kliniği",
+  "kullanici": "@antalyaveterinerklinigi",
+  "ilce": "Muratpaşa (Fener)",
+  "takipci": 6958,
+  "gonderi": 904,
+  "varsak": false,
+  "link": "https://www.instagram.com/antalyaveterinerklinigi/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "Vitality Veteriner Kliniği",
+  "kullanici": "@vitalityveteriner",
+  "ilce": "Kepez",
+  "takipci": 4004,
+  "gonderi": 168,
+  "varsak": false,
+  "link": "https://www.instagram.com/vitalityveteriner/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "International Prime Animal Hospital",
+  "kullanici": "@primeveterinaryhospital",
+  "ilce": "Antalya",
+  "takipci": 3697,
+  "gonderi": 395,
+  "varsak": false,
+  "link": "https://www.instagram.com/primeveterinaryhospital/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "VETON Veteriner Kliniği",
+  "kullanici": "@vetonveterinerklinigi",
+  "ilce": "Kepez",
+  "takipci": 2175,
+  "gonderi": 122,
+  "varsak": false,
+  "link": "https://www.instagram.com/vetonveterinerklinigi/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "Manavgat Veteriner Kliniği",
+  "kullanici": "@manavgat_veteriner",
+  "ilce": "Manavgat",
+  "takipci": 739,
+  "gonderi": 247,
+  "varsak": false,
+  "link": "https://www.instagram.com/manavgat_veteriner/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "Evcilyum Veteriner Kliniği",
+  "kullanici": "@evcilyum",
+  "ilce": "Çağlayan",
+  "takipci": 701,
+  "gonderi": 73,
+  "varsak": false,
+  "link": "https://www.instagram.com/evcilyum/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ },
+ {
+  "hesap": "Oscar Veteriner Kliniği",
+  "kullanici": "@oscarvetantalya",
+  "ilce": "Muratpaşa",
+  "takipci": 449,
+  "gonderi": 38,
+  "varsak": false,
+  "link": "https://www.instagram.com/oscarvetantalya/",
+  "kaynak": "Instagram profili",
+  "tarih": "2026"
+ }
+]

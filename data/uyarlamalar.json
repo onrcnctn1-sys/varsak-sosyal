@@ -1,0 +1,166 @@
+[
+ {
+  "baslik": "Doğrusunu unutturan kelimeler: Irk adı turu",
+  "tur": "Ekip oyunu",
+  "orijinal": "Yanlış söylenen kelimeyi doğrusunu unutturacak kadar tekrar etme oyunu",
+  "varsak": "Hekim, hasta sahiplerinin en çok yanlış söylediği ırk ve ilaç adlarını sırayla okur ('Golden Retriver', 'Pomeranya', 'Siyam'); ekip doğrusunu 3 saniyede söylemeye çalışır, şaşıran elenir.",
+  "nasil": [
+   "Kartlara en sık yanlış söylenen 8 ırk/terim yazın",
+   "2-3 personel yan yana, kamera karşıda",
+   "Her kart 3 saniye; şaşıranı kamera yakından çeker",
+   "Sonda doğru telaffuzları ekrana yazın"
+  ],
+  "kisi": "2-4 kişi",
+  "sure": "25-35 sn",
+  "zorluk": "Kolay",
+  "neden": "Komik + öğretici; yorumlarda 'ben de yanlış söylüyormuşum' etkileşimi getirir.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Hastayı sesinden tanı",
+  "tur": "Ekip oyunu",
+  "orijinal": "'Personeli sesinden tanı' trendi",
+  "varsak": "Hekimin gözü bağlı; daha önce kaydedilmiş miyav/havlama seslerinden hangi düzenli hastanın olduğunu tahmin eder. Doğru bilince hastanın fotoğrafı ekrana gelir.",
+  "nasil": [
+   "Sahiplerin izniyle 4-5 düzenli hastanın sesini kaydedin",
+   "Hekimin gözünü bağlayın, sesleri hoparlörden çalın",
+   "Her tahminden sonra hastanın fotoğrafını kesme ile gösterin",
+   "Yorumlara: 'Siz kaçını bilirdiniz?'"
+  ],
+  "kisi": "2 kişi",
+  "sure": "30 sn",
+  "zorluk": "Kolay",
+  "neden": "Hasta sahipleri kendi hayvanını görünce paylaşır; yerel kitle büyür.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Personeli sesinden tanı (klinik versiyonu)",
+  "tur": "Ekip oyunu",
+  "orijinal": "Ofislerde viral 'iş arkadaşını sesinden tanı'",
+  "varsak": "Muayene masasındaki peluş 'hasta' konuşur gibi seslendirilir; hangi personelin seslendirdiğini hekim tahmin eder.",
+  "nasil": [
+   "Peluş bir kedi/köpek kullanın",
+   "Personel sırayla masa altından tek cümle söyler",
+   "Hekim tahmin eder; yanlışta komik ses efekti"
+  ],
+  "kisi": "3-5 kişi",
+  "sure": "20-30 sn",
+  "zorluk": "Kolay",
+  "neden": "Ekibi tanıtır, kliniğe sıcaklık katar; hayvan stresi sıfır.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Röntgende ne var?",
+  "tur": "Viral trend",
+  "orijinal": "'Guess what we found' (ne bulduk tahmin et) videoları",
+  "varsak": "Yutulmuş bir cismin röntgeni gösterilir, ekip ve izleyici tahmin eder; sonra çıkan cisim gösterilir ve tek cümlelik uyarı yapılır.",
+  "nasil": [
+   "Sahibin izniyle, kimlik bilgisi olmadan röntgeni çekin",
+   "İlk kare: röntgen + 'Sizce bu ne?' yazısı",
+   "3 saniye bekletme, sonra cisim",
+   "Kapanış: 'Evde şunlara dikkat'"
+  ],
+  "kisi": "1-2 kişi",
+  "sure": "15-25 sn",
+  "zorluk": "Orta",
+  "neden": "Merak boşluğu izletir, sonundaki uyarı kaydedilir ve paylaşılır.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Pet kuaför: Önce / sonra",
+  "tur": "Viral trend",
+  "orijinal": "Sessiz estetik tıraş ve tarama ASMR videoları",
+  "varsak": "@varsakvetpetkuafor ile ortak: Keçeleşmiş tüyden temiz tıraşa geçiş, müzik eşliğinde, konuşmasız.",
+  "nasil": [
+   "Başta 2 saniye 'önce' görüntüsü",
+   "Makas/tarama yakın çekimleri, hızlandırılmış",
+   "Sonda mutlu hayvanın yürüyüşü",
+   "İki hesapta ortak gönderi (collab)"
+  ],
+  "kisi": "1-2 kişi",
+  "sure": "15-20 sn",
+  "zorluk": "Kolay",
+  "neden": "Sessiz estetik en yüksek patlama oranına sahip format; kuaför hesabına da takipçi taşır.",
+  "hayvan": true
+ },
+ {
+  "baslik": "Asla / Her zaman (hızlı tur)",
+  "tur": "Ekip oyunu",
+  "orijinal": "'Never / Always' hızlı cevap trendi",
+  "varsak": "Hekime hızlı sorular: 'Köpeğe üzüm?' → 'Asla!', 'Yıllık aşı?' → 'Her zaman!'. Her cevapta ekranda kısa açıklama.",
+  "nasil": [
+   "10 soru hazırlayın",
+   "Soran kamera arkasında, hekim tek kelime cevaplar",
+   "Kurguda her cevaba 1 satır açıklama"
+  ],
+  "kisi": "2 kişi",
+  "sure": "25-30 sn",
+  "zorluk": "Kolay",
+  "neden": "'Asla yapmayın' listeleri milyonlarca izleniyor; hızlı tempo izlenme süresini artırır.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Bandaj yarışı",
+  "tur": "Ekip oyunu",
+  "orijinal": "Ofis yarışmaları (kim daha hızlı)",
+  "varsak": "İki personel peluş hayvan üzerinde bandaj yarışır; kazanan 'ayın bandaj ustası' ilan edilir.",
+  "nasil": [
+   "Peluşlar ve bandaj hazır",
+   "Ekranda kronometre",
+   "Sonda hekim 'doğru bandaj nasıl olmalı' diye 5 saniye ipucu verir"
+  ],
+  "kisi": "3 kişi",
+  "sure": "20-30 sn",
+  "zorluk": "Kolay",
+  "neden": "Rekabet + öğretici kapanış; hayvan kullanılmadığı için risk yok.",
+  "hayvan": false
+ },
+ {
+  "baslik": "POV: Kedin aşıdan sonra sana küstü",
+  "tur": "Viral trend",
+  "orijinal": "'POV' (bakış açısı) skeçleri",
+  "varsak": "Personel kedi sahibini oynar, peluş kedi sırtını döner; ekranda: 'Aşıdan sonra 24 saat küsmesi normal mi?' ve hekimden 1 cümle cevap.",
+  "nasil": [
+   "Tek mekân, tek kamera",
+   "Trend bir ses kullanın",
+   "Son 3 saniyede hekimin kısa açıklaması"
+  ],
+  "kisi": "2 kişi",
+  "sure": "10-15 sn",
+  "zorluk": "Kolay",
+  "neden": "Tanıdık durum + bilgi; kısa olduğu için döngüde tekrar izlenir.",
+  "hayvan": false
+ },
+ {
+  "baslik": "Varsak'ta 60 saniye",
+  "tur": "Viral trend",
+  "orijinal": "'Bir günüm' (day in the life) videoları",
+  "varsak": "Sabah açılıştan akşam kapanışa hızlı kesmeler: ilk kahve, ilk hasta, kuaför, taburcu, ışıkların kapanması.",
+  "nasil": [
+   "Gün boyu 2-3 saniyelik 20 çekim",
+   "Hızlı ritimli müzik",
+   "Hasta sahiplerinin yüzü izinsiz görünmesin"
+  ],
+  "kisi": "1 kişi çeker",
+  "sure": "30-45 sn",
+  "zorluk": "Orta",
+  "neden": "Patlayınca 6,5 kat izlenme alıyor; kliniğe güven verir.",
+  "hayvan": true
+ },
+ {
+  "baslik": "Kavuşma anı",
+  "tur": "Viral trend",
+  "orijinal": "Duygusal 'reunion' videoları",
+  "varsak": "Uzun tedavi sonrası hastanın sahibine kavuştuğu an, sahibin izniyle.",
+  "nasil": [
+   "Sahipten yazılı izin alın",
+   "Kapıdan girişi geniş açıdan çekin",
+   "Metin: tedavi kaç gün sürdü, tek cümle"
+  ],
+  "kisi": "1 kişi",
+  "sure": "15-25 sn",
+  "zorluk": "Kolay",
+  "neden": "Duygusal içerik en çok paylaşılan türlerden; yerel bilinirlik getirir.",
+  "hayvan": true
+ }
+]
