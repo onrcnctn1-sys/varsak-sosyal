@@ -292,10 +292,12 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
 .empty img { width: 110px; margin: 0 auto 8px; }
 
 /* Diyaloglar */
-dialog { border: 0; padding: 0; border-radius: 26px; width: min(560px, calc(100% - 24px)); max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); overflow: hidden; background: var(--panel); color: var(--fg); box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
-dialog[open] { display: flex; flex-direction: column; }
-dialog::backdrop { background: rgba(10,18,17,.55); backdrop-filter: blur(3px); }
-.dlg { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); }
+.sheet { position: fixed; inset: 0; z-index: 100; background: rgba(10,18,17,.55); display: flex; align-items: flex-end; justify-content: center; }
+.sheet[hidden] { display: none; }
+.sheet .dlg { width: min(560px, 100%); max-height: 88vh; max-height: 88dvh; background: var(--panel); color: var(--fg); border-radius: 26px 26px 0 0; padding-bottom: calc(24px + env(safe-area-inset-bottom)); box-shadow: 0 -20px 60px -20px rgba(0,0,0,.45); }
+@media (min-width: 700px) { .sheet { align-items: center; } .sheet .dlg { border-radius: 26px; } }
+@media (prefers-reduced-motion: no-preference) { .sheet:not([hidden]) .dlg { animation: up .28s cubic-bezier(.2,.8,.2,1) both; } @keyframes up { from { transform: translateY(40px); opacity: .4; } to { transform: none; opacity: 1; } } }
+.dlg { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
 .dlg-h { position: sticky; top: 0; z-index: 2; background: var(--panel); padding-top: 20px; padding-bottom: 6px; }
 body.modal-open { overflow: hidden; }
 .dlg-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -523,12 +525,12 @@ body.modal-open { overflow: hidden; }
   <button class="tab" data-s="notlar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z"/><path d="M9 11h6M9 15h6M9 7h3"/></svg>Notlar</button>
 </nav>
 
-<dialog id="dlgNews"><div class="dlg">
+<div class="sheet" id="dlgNews" role="dialog" aria-modal="true" aria-label="Yenilikler" hidden><div class="dlg">
   <div class="dlg-h"><h2>Yenilikler</h2><button class="close" data-close aria-label="Kapat">×</button></div>
   <div id="newsList" class="sec"></div>
-</div></dialog>
+</div></div>
 
-<dialog id="dlgSettings"><div class="dlg">
+<div class="sheet" id="dlgSettings" role="dialog" aria-modal="true" aria-label="Ayarlar" hidden><div class="dlg">
   <div class="dlg-h"><h2>Ayarlar</h2><button class="close" data-close aria-label="Kapat">×</button></div>
   <div class="field"><label for="setName">Uygulama adı</label><input type="text" id="setName" maxlength="30"></div>
   <div class="field"><label for="setSub">Alt başlık</label><input type="text" id="setSub" maxlength="40"></div>
@@ -538,7 +540,7 @@ body.modal-open { overflow: hidden; }
   <div class="field"><label>Renk</label><div class="swatches" id="swatches"></div></div>
   <p class="hint">Bu değişiklikler bu telefondaki uygulamada hemen görünür. Telefonun ana ekranındaki simge ve ad yeni APK ile değişir; Claude'a "simgeyi değiştir" demeniz yeterli.</p>
   <div class="row2"><button class="ghost" id="setReset">Hepsini sıfırla</button><button class="btn" id="setSave" style="margin-top:0">Kaydet</button></div>
-</div></dialog>
+</div></div>
 
 <script>
 (function () {
@@ -864,7 +866,7 @@ body.modal-open { overflow: hidden; }
     $("setName").value = draft.ad; $("setSub").value = draft.alt; $("setLogoPrev").src = draft.logo || "icons/icon-192.png";
     var sw = $("swatches"); sw.replaceChildren();
     THEMES.forEach(function (t, i) { var b = el("button", "sw" + (i === draft.tema ? " on" : "")); b.style.background = "linear-gradient(135deg," + t.h1 + "," + t.a2 + ")"; b.title = t.ad; b.setAttribute("aria-label", t.ad); b.onclick = function () { draft.tema = i; sw.querySelectorAll(".sw").forEach(function (x) { x.classList.toggle("on", x === b); }); }; sw.appendChild(b); });
-    $("dlgSettings").showModal();
+    openSheet("dlgSettings");
   }
   $("setLogo").addEventListener("change", function (e) {
     var f = e.target.files && e.target.files[0]; if (!f) return;
@@ -877,8 +879,8 @@ body.modal-open { overflow: hidden; }
     }; rd.readAsDataURL(f);
   });
   $("setLogoReset").onclick = function () { draft.logo = null; $("setLogoPrev").src = "icons/icon-192.png"; };
-  $("setSave").onclick = function () { draft.ad = $("setName").value.trim() || DEF.ad; draft.alt = $("setSub").value.trim() || DEF.alt; store.set("ayar", draft); applySettings(); drawAll(); $("dlgSettings").close(); };
-  $("setReset").onclick = function () { store.set("ayar", {}); applySettings(); drawAll(); $("dlgSettings").close(); };
+  $("setSave").onclick = function () { draft.ad = $("setName").value.trim() || DEF.ad; draft.alt = $("setSub").value.trim() || DEF.alt; store.set("ayar", draft); applySettings(); drawAll(); closeSheet("dlgSettings"); };
+  $("setReset").onclick = function () { store.set("ayar", {}); applySettings(); drawAll(); closeSheet("dlgSettings"); };
   $("btnSettings").onclick = openSettings;
 
   // ---------- YENİLİKLER ----------
@@ -892,10 +894,12 @@ body.modal-open { overflow: hidden; }
     $("dotNews").hidden = !unseen; $("updCard").hidden = !unseen;
     $("updTitle").textContent = "Sürüm " + l.surum + " geldi"; $("updSub").textContent = l.baslik;
   }
-  function openNews() { $("dlgNews").showModal(); var l = latestVer(); if (l) { store.set("ver", l.surum); $("dotNews").hidden = true; $("updCard").hidden = true; } }
+  function openNews() { openSheet("dlgNews"); var l = latestVer(); if (l) { store.set("ver", l.surum); $("dotNews").hidden = true; $("updCard").hidden = true; } }
   $("btnNews").onclick = openNews; $("updOpen").onclick = openNews;
-  document.querySelectorAll("dialog").forEach(function (d) { d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-close]")) d.close(); }); d.addEventListener("close", function () { document.body.classList.remove("modal-open"); }); });
-  var _show = HTMLDialogElement.prototype.showModal; HTMLDialogElement.prototype.showModal = function () { document.body.classList.add("modal-open"); return _show.apply(this, arguments); };
+  function openSheet(id) { var d = $(id); d.hidden = false; document.body.classList.add("modal-open"); var b = d.querySelector(".dlg"); if (b) b.scrollTop = 0; }
+  function closeSheet(id) { $(id).hidden = true; document.body.classList.remove("modal-open"); }
+  document.querySelectorAll(".sheet").forEach(function (d) { d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-close]")) closeSheet(d.id); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") document.querySelectorAll(".sheet:not([hidden])").forEach(function (d) { closeSheet(d.id); }); });
 
   // ---------- Gezinme ----------
   var SCREENS = ["ana", "varsak", "fikirler", "kesfet", "notlar"];
