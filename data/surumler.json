@@ -1,5 +1,14 @@
 [
  {
+  "surum": "1.2.2",
+  "tarih": "2026-11-22",
+  "baslik": "Düzeltmeler",
+  "maddeler": [
+   "Google puanı artık doğrudan Google Haritalar'dan: 4,4 ★, 89 yorum ve yıldız dağılımı",
+   "Varsak logosu artık her ekranda düzgün, ezilmeden görünüyor"
+  ]
+ },
+ {
   "surum": "1.2.1",
   "tarih": "2026-11-22",
   "baslik": "Otomatik güncelleme",

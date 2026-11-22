@@ -1,5 +1,5 @@
 // Varsak Sosyal service worker: uygulama kabuğu önbellekte, veri her zaman önce ağdan
-const CACHE = "varsak-v6";
+const CACHE = "varsak-v7";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/varsak-192.png", "./icons/varsak-512.png", "./assets/hero.svg", "./assets/kedi.svg", "./assets/kopek.svg", "./assets/kus.svg", "./assets/mama.svg", "./assets/asi.svg", "./assets/stetoskop.svg", "./assets/telefon.svg", "./assets/kamera.svg", "./assets/liste.svg", "./assets/ucret.svg", "./assets/egitim.svg", "./assets/kupa.svg", "./assets/makas.svg"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener("activate", (e) => {

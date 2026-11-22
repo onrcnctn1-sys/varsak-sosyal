@@ -45,7 +45,7 @@ h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
 .card { background: var(--panel); border-radius: var(--r); box-shadow: var(--shadow); }
 
 .topbar { display: flex; align-items: center; gap: 10px; }
-.topbar img { width: 40px; height: 40px; border-radius: 12px; }
+.topbar img { width: 40px; height: 40px; min-width: 40px; flex: none; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; }
 .brand { font-family: var(--display); font-weight: 800; font-size: 19px; }
 .brand small { display: block; font-family: var(--body); font-weight: 500; font-size: 12px; color: var(--muted); }
 .pill-live { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--soft); border-radius: 99px; padding: 6px 10px; white-space: nowrap; }
@@ -214,7 +214,7 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
 /* Varsak paneli */
 .profile { padding: 18px; display: flex; flex-direction: column; gap: 16px; }
 .p-head { display: flex; gap: 14px; align-items: center; }
-.p-head img { width: 64px; height: 64px; border-radius: 50%; padding: 3px; background: conic-gradient(from 200deg, var(--amber), var(--coral), var(--ig), var(--accent-2), var(--amber)); }
+.p-head img { width: 64px; height: 64px; min-width: 64px; flex: none; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; padding: 3px; background: conic-gradient(from 200deg, var(--amber), var(--coral), var(--ig), var(--accent-2), var(--amber)); }
 .p-head b { font-family: var(--display); font-size: 18px; display: block; }
 .p-head small { color: var(--muted); font-size: 13px; }
 .p-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
@@ -239,6 +239,11 @@ nav.tabs { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(1
 .stars { color: var(--amber); font-size: 18px; letter-spacing: 2px; }
 .rating small { color: var(--muted); font-size: 12.5px; display: block; margin-top: 2px; }
 .rating .btn { grid-column: 1 / -1; }
+.dist { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; }
+.dist div { display: grid; grid-template-columns: 34px 1fr 30px; gap: 8px; align-items: center; font-size: 12.5px; }
+.dist i { display: block; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.dist i b { display: block; height: 100%; background: var(--amber); border-radius: 99px; }
+.dist span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
 .cmp { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .cmp-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; }
 .cmp-row .nm { font-size: 13.5px; font-weight: 700; }
@@ -320,9 +325,9 @@ body.modal-open { overflow: hidden; }
 .sign b { color: var(--fg); font-weight: 700; }
 :root { --hero1: #0f766e; --hero2: #0e7490; --glow: #2dd4bf; }
 .hero { background: radial-gradient(120% 90% at 100% 0%, var(--glow) 0%, transparent 60%), linear-gradient(135deg, var(--hero1) 0%, var(--hero2) 100%); }
-.varsak-mini { padding: 14px 16px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; cursor: pointer; border: 0; text-align: left; width: 100%; font: inherit; color: inherit; }
-.varsak-mini img { width: 48px; height: 48px; border-radius: 50%; }
-.varsak-mini b { font-family: var(--display); font-size: 16px; display: block; }
+.varsak-mini { padding: 14px 16px; display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 12px; align-items: center; cursor: pointer; border: 0; text-align: left; width: 100%; font: inherit; color: inherit; }
+.varsak-mini img { width: 48px; height: 48px; min-width: 48px; flex: none; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; }
+.varsak-mini b { font-family: var(--display); font-size: 16px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .varsak-mini small { color: var(--muted); font-size: 12.5px; }
 .varsak-mini .v { text-align: right; font-family: var(--display); font-weight: 800; font-size: 20px; }
 .varsak-mini .v small { display: block; font-family: var(--body); font-weight: 600; font-size: 11px; }
@@ -690,7 +695,13 @@ body.modal-open { overflow: hidden; }
     if (g) {
       var big = el("div", "big", dec(g.puan)); var info = el("div");
       info.append(el("div", "stars", "★★★★★".slice(0, Math.round(g.puan)) + "☆☆☆☆☆".slice(0, 5 - Math.round(g.puan))), el("b", null, int(g.yorum) + " değerlendirme"), el("small", null, g.kaynak + " · " + g.tarih + (v.yandex ? " · Yandex: " + dec(v.yandex.puan) + " ★ (" + v.yandex.yorum + " yorum)" : "")));
-      gc.append(big, info); var ga = linkA(g.link, "Google'da yorumları gör", "btn"); if (ga) gc.appendChild(ga);
+      gc.append(big, info);
+      if (g.dagilim) {
+        var dist = el("div", "dist"), tot = g.yorum || 1;
+        ["5", "4", "3", "2", "1"].forEach(function (k) { var n = g.dagilim[k] || 0; var row = el("div"); var tr = el("i"); var f = el("b"); f.style.width = (n / tot * 100) + "%"; tr.appendChild(f); row.append(el("span", null, k + " ★"), tr, el("span", null, String(n))); dist.appendChild(row); });
+        gc.appendChild(dist);
+      }
+      var ga = linkA(g.link, "Google'da yorumları gör", "btn"); if (ga) gc.appendChild(ga);
     }
   }
   function drawAntalya() {
@@ -891,7 +902,7 @@ body.modal-open { overflow: hidden; }
   $("btnSettings").onclick = openSettings;
 
   // ---------- YENİLİKLER ----------
-  var APP_VER = "1.2.1";
+  var APP_VER = "1.2.2";
   function latestVer() { return (D.surumler || [])[0]; }
   // Telefonda eski sürüm önbellekte kaldıysa: önbelleği temizle ve bir kez yeniden yükle
   function selfUpdate() {

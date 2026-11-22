@@ -75,11 +75,18 @@
   }
  ],
  "google": {
-  "puan": 4.9,
-  "yorum": 327,
-  "kaynak": "Google puanı (Aratsana listesi)",
-  "tarih": "Kas 2026",
-  "link": "https://www.google.com/maps/search/?api=1&query=Varsak+Veteriner+Poliklini%C4%9Fi+Kepez+Antalya"
+  "puan": 4.4,
+  "yorum": 89,
+  "dagilim": {
+   "5": 76,
+   "4": 0,
+   "3": 0,
+   "2": 0,
+   "1": 13
+  },
+  "kaynak": "Google Haritalar",
+  "tarih": "22.11.2026",
+  "link": "https://www.google.com/maps/place/VARSAK+VETER%C4%B0NER+POL%C4%B0KL%C4%B0N%C4%B0%C4%9E%C4%B0/@36.9611668,30.711417,17z/data=!4m6!3m5!1s0x14c3876162a342a7:0x4e8addc55998a855!8m2!3d36.9611668!4d30.711417"
  },
  "yandex": {
   "puan": 5.0,
